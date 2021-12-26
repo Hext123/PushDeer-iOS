@@ -17,7 +17,9 @@ struct DeletableView<Content : View> : View {
         Spacer()
         Button(action: {
           print("点击删除")
-          deleteAction()
+          withAnimation(.easeOut) {
+            deleteAction()
+          }
         }, label: {
           Image(systemName: "trash")
             .imageScale(.large)

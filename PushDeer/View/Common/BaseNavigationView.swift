@@ -14,6 +14,7 @@ struct BaseNavigationView<Content : View> : View {
     NavigationView {
       ZStack {
         Spacer()
+          .frame(width: .infinity, height: .infinity)
         contentView
       }
       .background(

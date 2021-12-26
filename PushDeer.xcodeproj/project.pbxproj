@@ -20,6 +20,8 @@
 		5292F5002776BC7A00B9A7BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292F4FF2776BC7A00B9A7BB /* Preview Assets.xcassets */; };
 		52EB90AC2778ADF80048E0ED /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AB2778ADF80048E0ED /* CardView.swift */; };
 		52EB90AE2778AFD60048E0ED /* BaseNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */; };
+		52EB90B02778D67F0048E0ED /* KeyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AF2778D67F0048E0ED /* KeyItemView.swift */; };
+		52EB90B32778DA4E0048E0ED /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90B22778DA4E0048E0ED /* Line.swift */; };
 		52F0243F277737470071D861 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0243E277737470071D861 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		5292F4FF2776BC7A00B9A7BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52EB90AB2778ADF80048E0ED /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationView.swift; sourceTree = "<group>"; };
+		52EB90AF2778D67F0048E0ED /* KeyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyItemView.swift; sourceTree = "<group>"; };
+		52EB90B22778DA4E0048E0ED /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		52F0243C277733CE0071D861 /* PushDeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushDeer.entitlements; sourceTree = "<group>"; };
 		52F0243E277737470071D861 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,19 +95,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		52EB90B12778D9F90048E0ED /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */,
+				523150D8277875FB00941EDC /* DeletableView.swift */,
+				52EB90AB2778ADF80048E0ED /* CardView.swift */,
+				52EB90B22778DA4E0048E0ED /* Line.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		52F0243D2777370F0071D861 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52EB90B12778D9F90048E0ED /* Common */,
 				52F0243E277737470071D861 /* LoginView.swift */,
 				52163EB227773F8400594190 /* MainView.swift */,
 				52163EB42777413B00594190 /* MessageView.swift */,
 				52163EB62777415F00594190 /* DeviceView.swift */,
 				52163EB82777417900594190 /* KeyView.swift */,
 				52163EBA277741AC00594190 /* SettingsView.swift */,
-				523150D8277875FB00941EDC /* DeletableView.swift */,
 				523150DB2778762B00941EDC /* DeviceItemView.swift */,
-				52EB90AB2778ADF80048E0ED /* CardView.swift */,
-				52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */,
+				52EB90AF2778D67F0048E0ED /* KeyItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,12 +197,14 @@
 				523150D9277875FB00941EDC /* DeletableView.swift in Sources */,
 				52163EBB277741AC00594190 /* SettingsView.swift in Sources */,
 				52163EB327773F8400594190 /* MainView.swift in Sources */,
+				52EB90B32778DA4E0048E0ED /* Line.swift in Sources */,
 				52163EB72777415F00594190 /* DeviceView.swift in Sources */,
 				52163EB92777417900594190 /* KeyView.swift in Sources */,
 				5292F4FB2776BC7900B9A7BB /* ContentView.swift in Sources */,
 				5292F4F92776BC7900B9A7BB /* PushDeerApp.swift in Sources */,
 				52EB90AE2778AFD60048E0ED /* BaseNavigationView.swift in Sources */,
 				52EB90AC2778ADF80048E0ED /* CardView.swift in Sources */,
+				52EB90B02778D67F0048E0ED /* KeyItemView.swift in Sources */,
 				52163EB52777413B00594190 /* MessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

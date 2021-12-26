@@ -26,7 +26,9 @@ struct DeviceView: View {
         }
       }
       .navigationBarItems(trailing: Button.init(action: {
-        devices.insert(Int(arc4random_uniform(1000)), at: 0)
+        withAnimation(.easeOut) {
+          devices.insert(Int(arc4random_uniform(1000)), at: 0)
+        }
       }, label: {
         Image(systemName: "plus")
           .foregroundColor(Color(UIColor.lightGray))
