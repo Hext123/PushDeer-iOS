@@ -7,8 +7,8 @@
 
 import SwiftUI
 struct DeletableView<Content : View> : View {
-  @ViewBuilder let itemView: Content
-  let delete : () -> ()
+  @ViewBuilder let contentView: Content
+  let deleteAction : () -> ()
   @State private var offsetX = 0.0
   @State private var isShowDelete = false
   var body: some View {
@@ -16,8 +16,8 @@ struct DeletableView<Content : View> : View {
       HStack {
         Spacer()
         Button(action: {
-          print("删除")
-          delete()
+          print("点击删除")
+          deleteAction()
         }, label: {
           Image(systemName: "trash")
             .imageScale(.large)
@@ -25,7 +25,7 @@ struct DeletableView<Content : View> : View {
             .padding()
         })
       }
-      itemView
+      contentView
         .offset(x: offsetX, y: 0)
         .gesture(
           DragGesture()
@@ -59,9 +59,9 @@ struct DeletableView<Content : View> : View {
 
 struct DeletableView_Previews: PreviewProvider {
   static var previews: some View {
-    DeletableView(itemView: {
+    DeletableView(contentView: {
       DeviceItemView(name: "未知设备")
-    }, delete: {
+    }, deleteAction: {
       
     })
   }

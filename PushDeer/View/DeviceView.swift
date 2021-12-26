@@ -10,14 +10,13 @@ import SwiftUI
 struct DeviceView: View {
   @State var devices = Array(0..<10)
   var body: some View {
-    NavigationView {
-      
+    BaseNavigationView(title: "设备") {
       ScrollView {
         LazyVStack(alignment: .center) {
           ForEach(devices, id: \.self) { name in
-            DeletableView(itemView: {
+            DeletableView(contentView: {
               DeviceItemView(name: "设备 \(name)")
-            }, delete: {
+            }, deleteAction: {
               devices.removeAll { _name in
                 _name == name
               }
@@ -25,21 +24,14 @@ struct DeviceView: View {
               .padding(EdgeInsets(top: 18, leading: 26, bottom: 0, trailing: 24))
           }
         }
-        
       }
-      .background(
-        Image("deer.gray").offset(x: -150, y: -10),
-        alignment: .bottom
-      )
-      .navigationBarTitle("设备")
       .navigationBarItems(trailing: Button.init(action: {
-        
+        devices.insert(Int(arc4random_uniform(1000)), at: 0)
       }, label: {
         Image(systemName: "plus")
           .foregroundColor(Color(UIColor.lightGray))
       }))
     }
-    .navigationViewStyle(.stack)
   }
 }
 
