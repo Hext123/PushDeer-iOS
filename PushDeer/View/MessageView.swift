@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 消息界面
 struct MessageView: View {
   var body: some View {
     Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)

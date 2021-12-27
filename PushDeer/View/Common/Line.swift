@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 水平线
 struct HLine: Shape {
   func path(in rect: CGRect) -> Path {
     Path { path in
@@ -16,6 +17,7 @@ struct HLine: Shape {
   }
 }
 
+/// 垂直线
 struct VLine: Shape {
   func path(in rect: CGRect) -> Path {
     Path { path in
@@ -27,7 +29,9 @@ struct VLine: Shape {
 
 struct Line_Previews: PreviewProvider {
   static var previews: some View {
+    // 横虚线示例
     HLine().stroke(style: StrokeStyle(lineWidth: 1,dash: [5]))
+    // 竖实线
     VLine().stroke()
   }
 }

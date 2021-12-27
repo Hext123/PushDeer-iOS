@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// APP 主界面
 struct MainView: View {
   var body: some View {
     TabView {

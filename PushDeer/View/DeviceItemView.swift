@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 每个设备项的 View
 struct DeviceItemView: View {
   var name: String
   var body: some View {

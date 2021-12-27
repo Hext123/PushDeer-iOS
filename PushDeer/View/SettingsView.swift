@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 设置界面
 struct SettingsView: View {
   var body: some View {
     BaseNavigationView(title: "设置") {
@@ -29,6 +30,7 @@ struct SettingsView: View {
   }
 }
 
+/// 每个设置项的 View
 struct SettingsItemView: View {
   let title: String
   let button: String

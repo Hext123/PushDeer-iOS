@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+/// 一个通用的卡片包装View
 struct CardView<Content : View> : View {
+  /// 内容View
   @ViewBuilder let contentView: Content
+  
   var body: some View {
     contentView
       .overlay(RoundedRectangle(cornerRadius: 8).stroke())

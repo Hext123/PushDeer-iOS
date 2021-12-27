@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+/// 具有导航栏结构的基础容器View, APP内的页面基本上都可以使用它包装
 struct BaseNavigationView<Content : View> : View {
+  /// 导航栏标题
   let title: String
+  /// 页面主体View
   @ViewBuilder let contentView: Content
+  
   var body: some View {
     NavigationView {
       ZStack {

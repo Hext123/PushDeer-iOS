@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 每个 Key 项的 View
 struct KeyItemView: View {
   let keyItem: KeyItem
   

@@ -12,6 +12,7 @@ struct KeyItem: Codable, Identifiable{
   let key: String
 }
 
+/// Key 界面
 struct KeyView: View {
   @State private var keyItems = [
     KeyItem(id: 1, key: UUID().uuidString),
@@ -38,7 +39,7 @@ struct KeyView: View {
           }
         }
       }
-      .navigationBarItems(trailing: Button.init(action: {
+      .navigationBarItems(trailing: Button(action: {
         let keyItem = KeyItem(id: Int(arc4random_uniform(1000)), key: UUID().uuidString)
         withAnimation(.easeOut) {
           keyItems.insert(keyItem, at: 0)

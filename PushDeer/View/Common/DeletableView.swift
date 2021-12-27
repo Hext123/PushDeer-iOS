@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+
+/// 一个可左滑删除的包装View
 struct DeletableView<Content : View> : View {
+  /// 内容View
   @ViewBuilder let contentView: Content
+  /// 删除按钮点击的回调
   let deleteAction : () -> ()
+  
   @State private var offsetX = 0.0
   @State private var isShowDelete = false
+  
   var body: some View {
     ZStack {
       HStack {

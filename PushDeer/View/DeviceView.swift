@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 设备界面
 struct DeviceView: View {
   @State var devices = Array(0..<10)
   var body: some View {
@@ -25,7 +26,7 @@ struct DeviceView: View {
           }
         }
       }
-      .navigationBarItems(trailing: Button.init(action: {
+      .navigationBarItems(trailing: Button(action: {
         withAnimation(.easeOut) {
           devices.insert(Int(arc4random_uniform(1000)), at: 0)
         }
