@@ -11,17 +11,17 @@ import SwiftUI
 struct MainView: View {
   var body: some View {
     TabView {
-      DeviceView()
+      DeviceListView()
         .tabItem {
           Label("设备",systemImage: "ipad.and.iphone")
         }
       
-      KeyView()
+      KeyListView()
         .tabItem{
           Label("Key",systemImage: "key")
         }
       
-      MessageView()
+      MessageListView()
         .tabItem({Label("消息",systemImage: "message")}).onTapGesture {
         }
       

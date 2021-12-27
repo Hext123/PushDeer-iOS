@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		52163EB327773F8400594190 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB227773F8400594190 /* MainView.swift */; };
-		52163EB52777413B00594190 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB42777413B00594190 /* MessageView.swift */; };
-		52163EB72777415F00594190 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB62777415F00594190 /* DeviceView.swift */; };
-		52163EB92777417900594190 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB82777417900594190 /* KeyView.swift */; };
+		52163EB52777413B00594190 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB42777413B00594190 /* MessageListView.swift */; };
+		52163EB72777415F00594190 /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB62777415F00594190 /* DeviceListView.swift */; };
+		52163EB92777417900594190 /* KeyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB82777417900594190 /* KeyListView.swift */; };
 		52163EBB277741AC00594190 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EBA277741AC00594190 /* SettingsView.swift */; };
 		523150D9277875FB00941EDC /* DeletableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523150D8277875FB00941EDC /* DeletableView.swift */; };
 		523150DC2778762B00941EDC /* DeviceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523150DB2778762B00941EDC /* DeviceItemView.swift */; };
@@ -23,13 +23,14 @@
 		52EB90B02778D67F0048E0ED /* KeyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AF2778D67F0048E0ED /* KeyItemView.swift */; };
 		52EB90B32778DA4E0048E0ED /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90B22778DA4E0048E0ED /* Line.swift */; };
 		52F0243F277737470071D861 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0243E277737470071D861 /* LoginView.swift */; };
+		52F2C223277961D7006F08DC /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2C222277961D7006F08DC /* SettingsItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		52163EB227773F8400594190 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		52163EB42777413B00594190 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-		52163EB62777415F00594190 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
-		52163EB82777417900594190 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
+		52163EB42777413B00594190 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
+		52163EB62777415F00594190 /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
+		52163EB82777417900594190 /* KeyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyListView.swift; sourceTree = "<group>"; };
 		52163EBA277741AC00594190 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		523150D8277875FB00941EDC /* DeletableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletableView.swift; sourceTree = "<group>"; };
 		523150DB2778762B00941EDC /* DeviceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceItemView.swift; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		52EB90B22778DA4E0048E0ED /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		52F0243C277733CE0071D861 /* PushDeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushDeer.entitlements; sourceTree = "<group>"; };
 		52F0243E277737470071D861 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		52F2C222277961D7006F08DC /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +114,13 @@
 				52EB90B12778D9F90048E0ED /* Common */,
 				52F0243E277737470071D861 /* LoginView.swift */,
 				52163EB227773F8400594190 /* MainView.swift */,
-				52163EB42777413B00594190 /* MessageView.swift */,
-				52163EB62777415F00594190 /* DeviceView.swift */,
-				52163EB82777417900594190 /* KeyView.swift */,
+				52163EB62777415F00594190 /* DeviceListView.swift */,
+				52163EB82777417900594190 /* KeyListView.swift */,
+				52163EB42777413B00594190 /* MessageListView.swift */,
 				52163EBA277741AC00594190 /* SettingsView.swift */,
 				523150DB2778762B00941EDC /* DeviceItemView.swift */,
 				52EB90AF2778D67F0048E0ED /* KeyItemView.swift */,
+				52F2C222277961D7006F08DC /* SettingsItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,14 +201,15 @@
 				52163EBB277741AC00594190 /* SettingsView.swift in Sources */,
 				52163EB327773F8400594190 /* MainView.swift in Sources */,
 				52EB90B32778DA4E0048E0ED /* Line.swift in Sources */,
-				52163EB72777415F00594190 /* DeviceView.swift in Sources */,
-				52163EB92777417900594190 /* KeyView.swift in Sources */,
+				52F2C223277961D7006F08DC /* SettingsItemView.swift in Sources */,
+				52163EB72777415F00594190 /* DeviceListView.swift in Sources */,
+				52163EB92777417900594190 /* KeyListView.swift in Sources */,
 				5292F4FB2776BC7900B9A7BB /* ContentView.swift in Sources */,
 				5292F4F92776BC7900B9A7BB /* PushDeerApp.swift in Sources */,
 				52EB90AE2778AFD60048E0ED /* BaseNavigationView.swift in Sources */,
 				52EB90AC2778ADF80048E0ED /* CardView.swift in Sources */,
 				52EB90B02778D67F0048E0ED /* KeyItemView.swift in Sources */,
-				52163EB52777413B00594190 /* MessageView.swift in Sources */,
+				52163EB52777413B00594190 /* MessageListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

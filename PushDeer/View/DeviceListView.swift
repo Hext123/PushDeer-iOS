@@ -1,5 +1,5 @@
 //
-//  DeviceView.swift
+//  DeviceListView.swift
 //  PushDeer
 //
 //  Created by HEXT on 2021/12/25.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// 设备界面
-struct DeviceView: View {
+struct DeviceListView: View {
   @State var devices = Array(0..<10)
   var body: some View {
     BaseNavigationView(title: "设备") {
@@ -40,6 +40,6 @@ struct DeviceView: View {
 
 struct DeviceView_Previews: PreviewProvider {
   static var previews: some View {
-    DeviceView()
+    DeviceListView()
   }
 }

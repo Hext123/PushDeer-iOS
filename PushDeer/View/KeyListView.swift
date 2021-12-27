@@ -1,5 +1,5 @@
 //
-//  KeyView.swift
+//  KeyListView.swift
 //  PushDeer
 //
 //  Created by HEXT on 2021/12/25.
@@ -13,7 +13,7 @@ struct KeyItem: Codable, Identifiable{
 }
 
 /// Key 界面
-struct KeyView: View {
+struct KeyListView: View {
   @State private var keyItems = [
     KeyItem(id: 1, key: UUID().uuidString),
     KeyItem(id: 2, key: UUID().uuidString),
@@ -54,6 +54,6 @@ struct KeyView: View {
 
 struct KeyView_Previews: PreviewProvider {
   static var previews: some View {
-    KeyView()
+    KeyListView()
   }
 }
