@@ -14,6 +14,9 @@ struct DeletableView<Content : View> : View {
   /// 删除按钮点击的回调
   let deleteAction : () -> ()
   
+  /// 最大偏移 x, 可以认为是删除按钮漏出来的宽度
+  private let offsetMaxX = 80.0
+  
   @State private var offsetX = 0.0
   @State private var isShowDelete = false
   
@@ -40,7 +43,7 @@ struct DeletableView<Content : View> : View {
             .onChanged({ value in
               let width = value.translation.width
               print("onChanged", width)
-              let endX = isShowDelete ? 60.0 : 0.0
+              let endX = isShowDelete ? offsetMaxX : 0.0
               if width < endX {
                 offsetX = width - endX
               } else {
@@ -51,11 +54,11 @@ struct DeletableView<Content : View> : View {
               withAnimation(.easeOut) {
                 let width = value.translation.width
                 print("onEnded", width)
-                if width > -20 {
+                if width > -(offsetMaxX/2) {
                   offsetX = 0
                   isShowDelete = false
                 } else {
-                  offsetX = -60
+                  offsetX = -offsetMaxX
                   isShowDelete = true
                 }
               }
