@@ -24,6 +24,7 @@ struct DeviceListView: View {
             })
               .padding(EdgeInsets(top: 18, leading: 26, bottom: 0, trailing: 24))
           }
+          Spacer(minLength: 30)
         }
       }
       .navigationBarItems(trailing: Button(action: {
