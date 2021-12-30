@@ -19,6 +19,27 @@
 		5292F4FD2776BC7A00B9A7BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292F4FC2776BC7A00B9A7BB /* Assets.xcassets */; };
 		5292F5002776BC7A00B9A7BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292F4FF2776BC7A00B9A7BB /* Preview Assets.xcassets */; };
 		52B8CF5F277DE660004CB680 /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8CF5E277DE660004CB680 /* AppleSignInButton.swift */; };
+		52B8CF67277E0B44004CB680 /* PushDeerClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8CF66277E0B44004CB680 /* PushDeerClipApp.swift */; };
+		52B8CF69277E0B44004CB680 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8CF68277E0B44004CB680 /* ContentView.swift */; };
+		52B8CF6B277E0B46004CB680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B8CF6A277E0B46004CB680 /* Assets.xcassets */; };
+		52B8CF6E277E0B46004CB680 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B8CF6D277E0B46004CB680 /* Preview Assets.xcassets */; };
+		52B8CF73277E0B46004CB680 /* PushDeerClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 52B8CF64277E0B44004CB680 /* PushDeerClip.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52B8CF78277E0BF1004CB680 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB227773F8400594190 /* MainView.swift */; };
+		52B8CF79277E0BFB004CB680 /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB62777415F00594190 /* DeviceListView.swift */; };
+		52B8CF7A277E0BFB004CB680 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB42777413B00594190 /* MessageListView.swift */; };
+		52B8CF7B277E0BFB004CB680 /* DeviceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523150DB2778762B00941EDC /* DeviceItemView.swift */; };
+		52B8CF7C277E0BFB004CB680 /* KeyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB82777417900594190 /* KeyListView.swift */; };
+		52B8CF7D277E0BFB004CB680 /* KeyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AF2778D67F0048E0ED /* KeyItemView.swift */; };
+		52B8CF7E277E0BFB004CB680 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EBA277741AC00594190 /* SettingsView.swift */; };
+		52B8CF7F277E0BFB004CB680 /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2C222277961D7006F08DC /* SettingsItemView.swift */; };
+		52B8CF80277E0BFB004CB680 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F40D2E277CA05600766C24 /* MessageItemView.swift */; };
+		52B8CF81277E0BFB004CB680 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0243E277737470071D861 /* LoginView.swift */; };
+		52B8CF82277E0C06004CB680 /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8CF5E277DE660004CB680 /* AppleSignInButton.swift */; };
+		52B8CF83277E0C12004CB680 /* DeletableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523150D8277875FB00941EDC /* DeletableView.swift */; };
+		52B8CF84277E0C12004CB680 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AB2778ADF80048E0ED /* CardView.swift */; };
+		52B8CF85277E0C12004CB680 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90B22778DA4E0048E0ED /* Line.swift */; };
+		52B8CF86277E0C12004CB680 /* BaseNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */; };
+		52B8CF87277E0C5C004CB680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292F4FC2776BC7A00B9A7BB /* Assets.xcassets */; };
 		52EB90AC2778ADF80048E0ED /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AB2778ADF80048E0ED /* CardView.swift */; };
 		52EB90AE2778AFD60048E0ED /* BaseNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */; };
 		52EB90B02778D67F0048E0ED /* KeyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AF2778D67F0048E0ED /* KeyItemView.swift */; };
@@ -27,6 +48,30 @@
 		52F2C223277961D7006F08DC /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2C222277961D7006F08DC /* SettingsItemView.swift */; };
 		52F40D2F277CA05600766C24 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F40D2E277CA05600766C24 /* MessageItemView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52B8CF71277E0B46004CB680 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5292F4ED2776BC7900B9A7BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B8CF63277E0B44004CB680;
+			remoteInfo = PushDeerClip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		52B8CF77277E0B46004CB680 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				52B8CF73277E0B46004CB680 /* PushDeerClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		52163EB227773F8400594190 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -42,6 +87,13 @@
 		5292F4FC2776BC7A00B9A7BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5292F4FF2776BC7A00B9A7BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52B8CF5E277DE660004CB680 /* AppleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButton.swift; sourceTree = "<group>"; };
+		52B8CF64277E0B44004CB680 /* PushDeerClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushDeerClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B8CF66277E0B44004CB680 /* PushDeerClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDeerClipApp.swift; sourceTree = "<group>"; };
+		52B8CF68277E0B44004CB680 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		52B8CF6A277E0B46004CB680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52B8CF6D277E0B46004CB680 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		52B8CF6F277E0B46004CB680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B8CF70277E0B46004CB680 /* PushDeerClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushDeerClip.entitlements; sourceTree = "<group>"; };
 		52EB90AB2778ADF80048E0ED /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationView.swift; sourceTree = "<group>"; };
 		52EB90AF2778D67F0048E0ED /* KeyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyItemView.swift; sourceTree = "<group>"; };
@@ -60,6 +112,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52B8CF61277E0B44004CB680 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				5292F4F72776BC7900B9A7BB /* PushDeer */,
+				52B8CF65277E0B44004CB680 /* PushDeerClip */,
 				5292F4F62776BC7900B9A7BB /* Products */,
 			);
 			indentWidth = 2;
@@ -76,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5292F4F52776BC7900B9A7BB /* PushDeer.app */,
+				52B8CF64277E0B44004CB680 /* PushDeerClip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +169,27 @@
 				52B8CF5E277DE660004CB680 /* AppleSignInButton.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		52B8CF65277E0B44004CB680 /* PushDeerClip */ = {
+			isa = PBXGroup;
+			children = (
+				52B8CF66277E0B44004CB680 /* PushDeerClipApp.swift */,
+				52B8CF68277E0B44004CB680 /* ContentView.swift */,
+				52B8CF6A277E0B46004CB680 /* Assets.xcassets */,
+				52B8CF6F277E0B46004CB680 /* Info.plist */,
+				52B8CF70277E0B46004CB680 /* PushDeerClip.entitlements */,
+				52B8CF6C277E0B46004CB680 /* Preview Content */,
+			);
+			path = PushDeerClip;
+			sourceTree = "<group>";
+		};
+		52B8CF6C277E0B46004CB680 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				52B8CF6D277E0B46004CB680 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		52EB90B12778D9F90048E0ED /* Common */ = {
@@ -149,15 +231,34 @@
 				5292F4F12776BC7900B9A7BB /* Sources */,
 				5292F4F22776BC7900B9A7BB /* Frameworks */,
 				5292F4F32776BC7900B9A7BB /* Resources */,
+				52B8CF77277E0B46004CB680 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				52B8CF72277E0B46004CB680 /* PBXTargetDependency */,
 			);
 			name = PushDeer;
 			productName = PushDeer;
 			productReference = 5292F4F52776BC7900B9A7BB /* PushDeer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		52B8CF63277E0B44004CB680 /* PushDeerClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B8CF74277E0B46004CB680 /* Build configuration list for PBXNativeTarget "PushDeerClip" */;
+			buildPhases = (
+				52B8CF60277E0B44004CB680 /* Sources */,
+				52B8CF61277E0B44004CB680 /* Frameworks */,
+				52B8CF62277E0B44004CB680 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PushDeerClip;
+			productName = PushDeerClip;
+			productReference = 52B8CF64277E0B44004CB680 /* PushDeerClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
 		};
 /* End PBXNativeTarget section */
 
@@ -170,6 +271,9 @@
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					5292F4F42776BC7900B9A7BB = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					52B8CF63277E0B44004CB680 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
@@ -188,6 +292,7 @@
 			projectRoot = "";
 			targets = (
 				5292F4F42776BC7900B9A7BB /* PushDeer */,
+				52B8CF63277E0B44004CB680 /* PushDeerClip */,
 			);
 		};
 /* End PBXProject section */
@@ -199,6 +304,16 @@
 			files = (
 				5292F5002776BC7A00B9A7BB /* Preview Assets.xcassets in Resources */,
 				5292F4FD2776BC7A00B9A7BB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B8CF62277E0B44004CB680 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B8CF6E277E0B46004CB680 /* Preview Assets.xcassets in Resources */,
+				52B8CF87277E0C5C004CB680 /* Assets.xcassets in Resources */,
+				52B8CF6B277E0B46004CB680 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +344,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52B8CF60277E0B44004CB680 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B8CF82277E0C06004CB680 /* AppleSignInButton.swift in Sources */,
+				52B8CF69277E0B44004CB680 /* ContentView.swift in Sources */,
+				52B8CF78277E0BF1004CB680 /* MainView.swift in Sources */,
+				52B8CF79277E0BFB004CB680 /* DeviceListView.swift in Sources */,
+				52B8CF84277E0C12004CB680 /* CardView.swift in Sources */,
+				52B8CF7E277E0BFB004CB680 /* SettingsView.swift in Sources */,
+				52B8CF7C277E0BFB004CB680 /* KeyListView.swift in Sources */,
+				52B8CF7A277E0BFB004CB680 /* MessageListView.swift in Sources */,
+				52B8CF83277E0C12004CB680 /* DeletableView.swift in Sources */,
+				52B8CF81277E0BFB004CB680 /* LoginView.swift in Sources */,
+				52B8CF7F277E0BFB004CB680 /* SettingsItemView.swift in Sources */,
+				52B8CF80277E0BFB004CB680 /* MessageItemView.swift in Sources */,
+				52B8CF86277E0C12004CB680 /* BaseNavigationView.swift in Sources */,
+				52B8CF67277E0B44004CB680 /* PushDeerClipApp.swift in Sources */,
+				52B8CF85277E0C12004CB680 /* Line.swift in Sources */,
+				52B8CF7B277E0BFB004CB680 /* DeviceItemView.swift in Sources */,
+				52B8CF7D277E0BFB004CB680 /* KeyItemView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52B8CF72277E0B46004CB680 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52B8CF63277E0B44004CB680 /* PushDeerClip */;
+			targetProxy = 52B8CF71277E0B46004CB680 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5292F5012776BC7A00B9A7BB /* Debug */ = {
@@ -351,6 +498,7 @@
 		5292F5042776BC7A00B9A7BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PushDeer/PushDeer.entitlements;
@@ -382,6 +530,7 @@
 		5292F5052776BC7A00B9A7BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PushDeer/PushDeer.entitlements;
@@ -410,6 +559,72 @@
 			};
 			name = Release;
 		};
+		52B8CF75277E0B46004CB680 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PushDeerClip/PushDeerClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PushDeerClip/Preview Content\"";
+				DEVELOPMENT_TEAM = Y47WTLML2S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PushDeerClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PushDeer;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wskfz.pushdeer.ios.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52B8CF76277E0B46004CB680 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PushDeerClip/PushDeerClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PushDeerClip/Preview Content\"";
+				DEVELOPMENT_TEAM = Y47WTLML2S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PushDeerClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PushDeer;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wskfz.pushdeer.ios.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -427,6 +642,15 @@
 			buildConfigurations = (
 				5292F5042776BC7A00B9A7BB /* Debug */,
 				5292F5052776BC7A00B9A7BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52B8CF74277E0B46004CB680 /* Build configuration list for PBXNativeTarget "PushDeerClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B8CF75277E0B46004CB680 /* Debug */,
+				52B8CF76277E0B46004CB680 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
