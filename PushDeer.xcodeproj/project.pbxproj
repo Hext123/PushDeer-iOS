@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4812F19BB0BFEFE089BC253E /* Pods_PushDeerClip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C2088F4CD9F4C0848E1A5 /* Pods_PushDeerClip.framework */; };
 		52163EB327773F8400594190 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB227773F8400594190 /* MainView.swift */; };
 		52163EB52777413B00594190 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB42777413B00594190 /* MessageListView.swift */; };
 		52163EB72777415F00594190 /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EB62777415F00594190 /* DeviceListView.swift */; };
@@ -47,6 +48,7 @@
 		52F0243F277737470071D861 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0243E277737470071D861 /* LoginView.swift */; };
 		52F2C223277961D7006F08DC /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2C222277961D7006F08DC /* SettingsItemView.swift */; };
 		52F40D2F277CA05600766C24 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F40D2E277CA05600766C24 /* MessageItemView.swift */; };
+		64B0C15E70CCC382B480F76E /* Pods_PushDeer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E380A18349DE4D26071E913E /* Pods_PushDeer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,12 @@
 		52F0243E277737470071D861 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		52F2C222277961D7006F08DC /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
 		52F40D2E277CA05600766C24 /* MessageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemView.swift; sourceTree = "<group>"; };
+		69F56B2711ED98819D474BE3 /* Pods-PushDeerClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushDeerClip.debug.xcconfig"; path = "Target Support Files/Pods-PushDeerClip/Pods-PushDeerClip.debug.xcconfig"; sourceTree = "<group>"; };
+		9CC775BE0326BF31C6FACF06 /* Pods-PushDeerClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushDeerClip.release.xcconfig"; path = "Target Support Files/Pods-PushDeerClip/Pods-PushDeerClip.release.xcconfig"; sourceTree = "<group>"; };
+		CCCE1F6E56B157872E2C755F /* Pods-PushDeer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushDeer.release.xcconfig"; path = "Target Support Files/Pods-PushDeer/Pods-PushDeer.release.xcconfig"; sourceTree = "<group>"; };
+		CE3005BD875FC9819A92466C /* Pods-PushDeer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushDeer.debug.xcconfig"; path = "Target Support Files/Pods-PushDeer/Pods-PushDeer.debug.xcconfig"; sourceTree = "<group>"; };
+		E03C2088F4CD9F4C0848E1A5 /* Pods_PushDeerClip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushDeerClip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E380A18349DE4D26071E913E /* Pods_PushDeer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushDeer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B0C15E70CCC382B480F76E /* Pods_PushDeer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,18 +125,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4812F19BB0BFEFE089BC253E /* Pods_PushDeerClip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17D35B157765D96FC4DA6C39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE3005BD875FC9819A92466C /* Pods-PushDeer.debug.xcconfig */,
+				CCCE1F6E56B157872E2C755F /* Pods-PushDeer.release.xcconfig */,
+				69F56B2711ED98819D474BE3 /* Pods-PushDeerClip.debug.xcconfig */,
+				9CC775BE0326BF31C6FACF06 /* Pods-PushDeerClip.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5292F4EC2776BC7900B9A7BB = {
 			isa = PBXGroup;
 			children = (
 				5292F4F72776BC7900B9A7BB /* PushDeer */,
 				52B8CF65277E0B44004CB680 /* PushDeerClip */,
 				5292F4F62776BC7900B9A7BB /* Products */,
+				17D35B157765D96FC4DA6C39 /* Pods */,
+				78FEAD2568FB92808C44E85A /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -221,6 +244,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		78FEAD2568FB92808C44E85A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E380A18349DE4D26071E913E /* Pods_PushDeer.framework */,
+				E03C2088F4CD9F4C0848E1A5 /* Pods_PushDeerClip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5292F5032776BC7A00B9A7BB /* Build configuration list for PBXNativeTarget "PushDeer" */;
 			buildPhases = (
+				D7C2D4C0049487EE64D69530 /* [CP] Check Pods Manifest.lock */,
 				5292F4F12776BC7900B9A7BB /* Sources */,
 				5292F4F22776BC7900B9A7BB /* Frameworks */,
 				5292F4F32776BC7900B9A7BB /* Resources */,
@@ -247,6 +280,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B8CF74277E0B46004CB680 /* Build configuration list for PBXNativeTarget "PushDeerClip" */;
 			buildPhases = (
+				2478CBF24D0E46561F75C65B /* [CP] Check Pods Manifest.lock */,
 				52B8CF60277E0B44004CB680 /* Sources */,
 				52B8CF61277E0B44004CB680 /* Frameworks */,
 				52B8CF62277E0B44004CB680 /* Resources */,
@@ -319,6 +353,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2478CBF24D0E46561F75C65B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PushDeerClip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7C2D4C0049487EE64D69530 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PushDeer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5292F4F12776BC7900B9A7BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -373,6 +454,7 @@
 /* Begin PBXTargetDependency section */
 		52B8CF72277E0B46004CB680 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 52B8CF63277E0B44004CB680 /* PushDeerClip */;
 			targetProxy = 52B8CF71277E0B46004CB680 /* PBXContainerItemProxy */;
 		};
@@ -497,6 +579,7 @@
 		};
 		5292F5042776BC7A00B9A7BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE3005BD875FC9819A92466C /* Pods-PushDeer.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -529,6 +612,7 @@
 		};
 		5292F5052776BC7A00B9A7BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCCE1F6E56B157872E2C755F /* Pods-PushDeer.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -561,6 +645,7 @@
 		};
 		52B8CF75277E0B46004CB680 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69F56B2711ED98819D474BE3 /* Pods-PushDeerClip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -594,6 +679,7 @@
 		};
 		52B8CF76277E0B46004CB680 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC775BE0326BF31C6FACF06 /* Pods-PushDeerClip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
