@@ -18,6 +18,7 @@
 		5292F4FB2776BC7900B9A7BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292F4FA2776BC7900B9A7BB /* ContentView.swift */; };
 		5292F4FD2776BC7A00B9A7BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292F4FC2776BC7A00B9A7BB /* Assets.xcassets */; };
 		5292F5002776BC7A00B9A7BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292F4FF2776BC7A00B9A7BB /* Preview Assets.xcassets */; };
+		52B8CF5F277DE660004CB680 /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B8CF5E277DE660004CB680 /* AppleSignInButton.swift */; };
 		52EB90AC2778ADF80048E0ED /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AB2778ADF80048E0ED /* CardView.swift */; };
 		52EB90AE2778AFD60048E0ED /* BaseNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */; };
 		52EB90B02778D67F0048E0ED /* KeyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AF2778D67F0048E0ED /* KeyItemView.swift */; };
@@ -40,6 +41,7 @@
 		5292F4FA2776BC7900B9A7BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5292F4FC2776BC7A00B9A7BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5292F4FF2776BC7A00B9A7BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		52B8CF5E277DE660004CB680 /* AppleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButton.swift; sourceTree = "<group>"; };
 		52EB90AB2778ADF80048E0ED /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationView.swift; sourceTree = "<group>"; };
 		52EB90AF2778D67F0048E0ED /* KeyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyItemView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		5292F4F72776BC7900B9A7BB /* PushDeer */ = {
 			isa = PBXGroup;
 			children = (
+				52B8CF5D277DE5FF004CB680 /* Common */,
 				52F0243D2777370F0071D861 /* View */,
 				52F0243C277733CE0071D861 /* PushDeer.entitlements */,
 				5292F4F82776BC7900B9A7BB /* PushDeerApp.swift */,
@@ -97,6 +100,14 @@
 				5292F4FF2776BC7A00B9A7BB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52B8CF5D277DE5FF004CB680 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				52B8CF5E277DE660004CB680 /* AppleSignInButton.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		52EB90B12778D9F90048E0ED /* Common */ = {
@@ -206,6 +217,7 @@
 				52EB90B32778DA4E0048E0ED /* Line.swift in Sources */,
 				52F2C223277961D7006F08DC /* SettingsItemView.swift in Sources */,
 				52163EB72777415F00594190 /* DeviceListView.swift in Sources */,
+				52B8CF5F277DE660004CB680 /* AppleSignInButton.swift in Sources */,
 				52163EB92777417900594190 /* KeyListView.swift in Sources */,
 				5292F4FB2776BC7900B9A7BB /* ContentView.swift in Sources */,
 				5292F4F92776BC7900B9A7BB /* PushDeerApp.swift in Sources */,

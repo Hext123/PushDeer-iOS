@@ -17,15 +17,15 @@ struct LoginView: View {
         .resizable()
         .scaledToFit()
       Spacer()
-      SignInWithAppleButton(
+      AppleSignInButton(
         onRequest: { request in
-          
+          request.requestedScopes = [.fullName, .email]
         },
         onCompletion: { result in
           
         }
       )
-        .frame(height: 64)
+        .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
         .padding()
       Spacer()
     }
