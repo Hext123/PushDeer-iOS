@@ -6,7 +6,7 @@ use_frameworks!
 
 def commonPods
   # Pods for common
-  
+  pod 'Moya', '~> 15.0'
 end
 
 target 'PushDeer' do

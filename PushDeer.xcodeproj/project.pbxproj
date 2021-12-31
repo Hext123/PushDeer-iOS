@@ -269,6 +269,7 @@
 				5292F4F22776BC7900B9A7BB /* Frameworks */,
 				5292F4F32776BC7900B9A7BB /* Resources */,
 				52B8CF77277E0B46004CB680 /* Embed App Clips */,
+				D5C7FAC44EC37CBCD945E0F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +289,7 @@
 				52B8CF60277E0B44004CB680 /* Sources */,
 				52B8CF61277E0B44004CB680 /* Frameworks */,
 				52B8CF62277E0B44004CB680 /* Resources */,
+				2E496999EBC4004366E8DE5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -378,6 +380,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E496999EBC4004366E8DE5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushDeerClip/Pods-PushDeerClip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushDeerClip/Pods-PushDeerClip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PushDeerClip/Pods-PushDeerClip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5C7FAC44EC37CBCD945E0F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushDeer/Pods-PushDeer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushDeer/Pods-PushDeer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PushDeer/Pods-PushDeer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D7C2D4C0049487EE64D69530 /* [CP] Check Pods Manifest.lock */ = {
@@ -587,7 +623,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE3005BD875FC9819A92466C /* Pods-PushDeer.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PushDeer/PushDeer.entitlements;
@@ -620,7 +655,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCCE1F6E56B157872E2C755F /* Pods-PushDeer.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PushDeer/PushDeer.entitlements;
