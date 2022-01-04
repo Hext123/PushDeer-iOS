@@ -15,6 +15,14 @@
 		52163EBB277741AC00594190 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EBA277741AC00594190 /* SettingsView.swift */; };
 		523150D9277875FB00941EDC /* DeletableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523150D8277875FB00941EDC /* DeletableView.swift */; };
 		523150DC2778762B00941EDC /* DeviceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523150DB2778762B00941EDC /* DeviceItemView.swift */; };
+		52450F3827848243003652D8 /* PushDeerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3727848243003652D8 /* PushDeerApi.swift */; };
+		52450F3927848243003652D8 /* PushDeerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3727848243003652D8 /* PushDeerApi.swift */; };
+		52450F3B278491F8003652D8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3A278491F8003652D8 /* AppState.swift */; };
+		52450F3C278491F8003652D8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3A278491F8003652D8 /* AppState.swift */; };
+		52450F3F2784923D003652D8 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3E2784923D003652D8 /* Result.swift */; };
+		52450F402784923D003652D8 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3E2784923D003652D8 /* Result.swift */; };
+		52450F422784943F003652D8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F412784943F003652D8 /* HttpRequest.swift */; };
+		52450F432784943F003652D8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F412784943F003652D8 /* HttpRequest.swift */; };
 		52483FC2277ED6D5003A100E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52483FC1277ED6D5003A100E /* AppDelegate.swift */; };
 		52483FC3277ED6D5003A100E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52483FC1277ED6D5003A100E /* AppDelegate.swift */; };
 		5292F4F92776BC7900B9A7BB /* PushDeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292F4F82776BC7900B9A7BB /* PushDeerApp.swift */; };
@@ -85,6 +93,11 @@
 		52163EBA277741AC00594190 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		523150D8277875FB00941EDC /* DeletableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletableView.swift; sourceTree = "<group>"; };
 		523150DB2778762B00941EDC /* DeviceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceItemView.swift; sourceTree = "<group>"; };
+		52450F3727848243003652D8 /* PushDeerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDeerApi.swift; sourceTree = "<group>"; };
+		52450F3A278491F8003652D8 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		52450F3E2784923D003652D8 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		52450F412784943F003652D8 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		52450F442784A95D003652D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		52483FC1277ED6D5003A100E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5292F4F52776BC7900B9A7BB /* PushDeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushDeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5292F4F82776BC7900B9A7BB /* PushDeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDeerApp.swift; sourceTree = "<group>"; };
@@ -146,6 +159,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		52450F362784822C003652D8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				52450F3727848243003652D8 /* PushDeerApi.swift */,
+				52450F3A278491F8003652D8 /* AppState.swift */,
+				52450F412784943F003652D8 /* HttpRequest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		52450F3D27849228003652D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52450F3E2784923D003652D8 /* Result.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5292F4EC2776BC7900B9A7BB = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +201,10 @@
 		5292F4F72776BC7900B9A7BB /* PushDeer */ = {
 			isa = PBXGroup;
 			children = (
+				52450F442784A95D003652D8 /* Info.plist */,
+				52450F362784822C003652D8 /* Service */,
 				52B8CF5D277DE5FF004CB680 /* Common */,
+				52450F3D27849228003652D8 /* Model */,
 				52F0243D2777370F0071D861 /* View */,
 				52F0243C277733CE0071D861 /* PushDeer.entitlements */,
 				52483FC1277ED6D5003A100E /* AppDelegate.swift */,
@@ -456,11 +490,15 @@
 				52B8CF5F277DE660004CB680 /* AppleSignInButton.swift in Sources */,
 				52163EB92777417900594190 /* KeyListView.swift in Sources */,
 				5292F4FB2776BC7900B9A7BB /* ContentView.swift in Sources */,
+				52450F3B278491F8003652D8 /* AppState.swift in Sources */,
 				5292F4F92776BC7900B9A7BB /* PushDeerApp.swift in Sources */,
 				52483FC2277ED6D5003A100E /* AppDelegate.swift in Sources */,
+				52450F3827848243003652D8 /* PushDeerApi.swift in Sources */,
 				52EB90AE2778AFD60048E0ED /* BaseNavigationView.swift in Sources */,
 				52EB90AC2778ADF80048E0ED /* CardView.swift in Sources */,
 				52EB90B02778D67F0048E0ED /* KeyItemView.swift in Sources */,
+				52450F3F2784923D003652D8 /* Result.swift in Sources */,
+				52450F422784943F003652D8 /* HttpRequest.swift in Sources */,
 				52163EB52777413B00594190 /* MessageListView.swift in Sources */,
 				52F40D2F277CA05600766C24 /* MessageItemView.swift in Sources */,
 			);
@@ -481,11 +519,15 @@
 				52B8CF83277E0C12004CB680 /* DeletableView.swift in Sources */,
 				52B8CF81277E0BFB004CB680 /* LoginView.swift in Sources */,
 				52B8CF7F277E0BFB004CB680 /* SettingsItemView.swift in Sources */,
+				52450F3C278491F8003652D8 /* AppState.swift in Sources */,
 				52B8CF80277E0BFB004CB680 /* MessageItemView.swift in Sources */,
 				52483FC3277ED6D5003A100E /* AppDelegate.swift in Sources */,
+				52450F3927848243003652D8 /* PushDeerApi.swift in Sources */,
 				52B8CF86277E0C12004CB680 /* BaseNavigationView.swift in Sources */,
 				52B8CF67277E0B44004CB680 /* PushDeerClipApp.swift in Sources */,
 				52B8CF85277E0C12004CB680 /* Line.swift in Sources */,
+				52450F402784923D003652D8 /* Result.swift in Sources */,
+				52450F432784943F003652D8 /* HttpRequest.swift in Sources */,
 				52B8CF7B277E0BFB004CB680 /* DeviceItemView.swift in Sources */,
 				52B8CF7D277E0BFB004CB680 /* KeyItemView.swift in Sources */,
 			);
@@ -632,6 +674,7 @@
 				DEVELOPMENT_TEAM = Y47WTLML2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PushDeer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -664,6 +707,7 @@
 				DEVELOPMENT_TEAM = Y47WTLML2S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PushDeer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

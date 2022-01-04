@@ -13,7 +13,7 @@ struct PushDeerApp: App {
   
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      ContentView().environmentObject(AppState.shared)
     }
   }
 }

@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-struct KeyItem: Codable, Identifiable{
-  let id: Int
-  let key: String
-}
-
 /// Key 界面
 struct KeyListView: View {
   @State private var keyItems = [

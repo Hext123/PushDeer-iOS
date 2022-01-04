@@ -20,6 +20,14 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
       print("注册通知结果: \(granted) - \(String(describing: error))")
     }
     application.registerForRemoteNotifications()
+    
+    Task {
+      // APP启动后要先调一个无用接口, 用于触发国行手机的网络授权弹框, 未授权前调的接口会直接失败. (提前触发网络授权弹窗)
+      let result = try await HttpRequest.fake()
+      AppState.shared.token = result.token
+      HttpRequest.getDevices()
+    }
+    
     return true
   }
   
