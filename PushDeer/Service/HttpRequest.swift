@@ -46,9 +46,26 @@ struct HttpRequest {
     return try await request(.login(idToken: idToken), resultType: TokenContent.self)
   }
   
+  static func getUserInfo() async throws -> UserInfoContent {
+    return try await request(.getUserInfo(token: AppState.shared.token), resultType: UserInfoContent.self)
+  }
+  
+  static func regDevice() async throws -> DeviceContent {
+    return try await request(.regDevice(
+      token: AppState.shared.token,
+      name: UIDevice.current.name,
+      device_id: AppState.shared.device_token,
+      is_clip: 0
+    ), resultType: DeviceContent.self)
+  }
+  
+  static func rmDevice(id: Int) async throws -> ActionContent {
+    return try await request(.rmDevice(token: AppState.shared.token, id: id), resultType: ActionContent.self)
+  }
+  
   @MainActor static func getDevices() {
     _Concurrency.Task {
-      let result = try await request(.getDevices(token: AppState.shared.token ?? ""), resultType: DeviceContent.self)
+      let result = try await request(.getDevices(token: AppState.shared.token), resultType: DeviceContent.self)
       AppState.shared.devices = result.devices
     }
   }

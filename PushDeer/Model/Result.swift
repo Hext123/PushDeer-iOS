@@ -20,6 +20,17 @@ struct TokenContent: Codable{
   let token: String
 }
 
+struct UserInfoContent: Codable{
+  let id: Int
+  let name: String
+  let email: String
+  let apple_id: String
+  let wechat_id: String?
+  let level: Int
+  let created_at: String
+  let updated_at: String
+}
+
 struct DeviceItem: Codable, Identifiable{
   let id: Int
   let uid: String

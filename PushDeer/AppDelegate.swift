@@ -9,9 +9,7 @@ import UIKit
 import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-  
-  static var deviceToken: String = ""
-  
+    
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     
     let center = UNUserNotificationCenter.current()
@@ -34,7 +32,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
     print("deviceToken: ", deviceTokenString)
-    AppDelegate.deviceToken = deviceTokenString;
+    AppState.shared.device_token = deviceTokenString
   }
   
   func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
