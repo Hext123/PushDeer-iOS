@@ -50,7 +50,10 @@ struct KeyContent: Codable{
 
 struct KeyItem: Codable, Identifiable{
   let id: Int
+  let name: String
+  let uid: String
   let key: String
+  let created_at: String
 }
 
 struct MessageContent: Codable{
@@ -67,4 +70,15 @@ struct MessageItem: Codable, Identifiable{
 
 struct ActionContent: Codable{
   let message: String
+}
+
+let dateFormatter = DateFormatter()
+
+extension KeyItem {
+  var createdDateStr: String {
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+    let createdDate = dateFormatter.date(from: self.created_at)
+    dateFormatter.dateFormat = "yyyy/MM/dd"
+    return dateFormatter.string(from: createdDate ?? Date())
+  }
 }

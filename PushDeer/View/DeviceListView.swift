@@ -14,7 +14,7 @@ struct DeviceListView: View {
     BaseNavigationView(title: "设备") {
       ScrollView {
         LazyVStack(alignment: .center) {
-          ForEach(store.devices, id: \.id) { deviceItem in
+          ForEach(store.devices.reversed()) { deviceItem in
             DeletableView(contentView: {
               DeviceItemView(name: getName(deviceItem: deviceItem))
             }, deleteAction: {
@@ -53,8 +53,11 @@ struct DeviceListView: View {
   
   func getName(deviceItem: DeviceItem) -> String {
     var name = deviceItem.name
+    if deviceItem.is_clip == 1 {
+      name += " [Clip]"
+    }
     if deviceItem.device_id == store.device_token {
-      name += "(当前设备)"
+      name += " (当前设备)"
     }
     return name
   }

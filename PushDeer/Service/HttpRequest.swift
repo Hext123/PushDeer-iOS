@@ -8,6 +8,7 @@
 import Foundation
 import Moya
 
+@MainActor
 struct HttpRequest {
   
   static let provider = MoyaProvider<PushDeerApi>(callbackQueue: DispatchQueue.main)
@@ -63,10 +64,33 @@ struct HttpRequest {
     return try await request(.rmDevice(token: AppState.shared.token, id: id), resultType: ActionContent.self)
   }
   
-  @MainActor static func getDevices() {
+  static func getDevices() {
     _Concurrency.Task {
       let result = try await request(.getDevices(token: AppState.shared.token), resultType: DeviceContent.self)
       AppState.shared.devices = result.devices
+    }
+  }
+  
+  static func genKey() async throws -> KeyContent {
+    return try await request(.genKey(token: AppState.shared.token), resultType: KeyContent.self)
+  }
+  
+  static func regenKey(id: Int) async throws -> ActionContent {
+    return try await request(.regenKey(token: AppState.shared.token, id: id), resultType: ActionContent.self)
+  }
+  
+  static func renameKey(id: Int, name: String) async throws -> ActionContent {
+    return try await request(.renameKey(token: AppState.shared.token, id: id, name: name), resultType: ActionContent.self)
+  }
+  
+  static func rmKey(id: Int) async throws -> ActionContent {
+    return try await request(.rmKey(token: AppState.shared.token, id: id), resultType: ActionContent.self)
+  }
+  
+  static func getKeys() {
+    _Concurrency.Task {
+      let result = try await request(.getKeys(token: AppState.shared.token), resultType: KeyContent.self)
+      AppState.shared.keys = result.keys
     }
   }
 }

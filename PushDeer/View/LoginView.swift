@@ -23,7 +23,7 @@ struct LoginView: View {
       Spacer()
       if showLoading {
         ProgressView()
-          .scaleEffect(2)
+          .scaleEffect(1.5)
       } else {
         AppleSignInButton(
           onRequest: { request in
