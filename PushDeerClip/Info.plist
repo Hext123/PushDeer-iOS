@@ -20,5 +20,7 @@
 	</array>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>APP需要访问本地网络以供调试(仅在开发时)</string>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
 </dict>
 </plist>

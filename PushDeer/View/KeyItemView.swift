@@ -93,7 +93,7 @@ struct KeyItemView: View {
           Task {
             do {
               _ = try await HttpRequest.regenKey(id: keyItem.id)
-              HttpRequest.getKeys()
+              HttpRequest.loadKeys()
             } catch {
               
             }

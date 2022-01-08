@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MessageItemView: View {
+  let messageItem: MessageItem
   /// 删除按钮点击的回调
   let deleteAction : () -> ()
   
@@ -23,7 +24,7 @@ struct MessageItemView: View {
         Text("key名字")
           .font(.system(size: 14))
           .foregroundColor(Color(UIColor.darkGray))
-        Text("· 5分钟前")
+        Text(messageItem.createdDateStr)
           .font(.system(size: 12))
           .foregroundColor(Color(UIColor.darkGray))
         HLine().stroke(Color(UIColor.lightGray))
@@ -33,7 +34,7 @@ struct MessageItemView: View {
       DeletableView(contentView: {
         CardView {
           HStack{
-            Text("纯文本的效果")
+            Text(messageItem.text)
               .font(.system(size: 14))
               .foregroundColor(Color(UIColor.darkGray))
               .padding()
@@ -56,8 +57,8 @@ struct MessageItemView: View {
 struct MessageItemView_Previews: PreviewProvider {
   static var previews: some View {
     VStack {
-      MessageItemView(){}
-      MessageItemView(){}
+      MessageItemView(messageItem: MessageItem(id: 1, uid: "1", text: "纯文本的效果", desp: "", type: "text", created_at: "2022-01-08T18:00:48.000000Z")){}
+      MessageItemView(messageItem: MessageItem(id: 1, uid: "1", text: "*MarkDown*的**效果**", desp: "", type: "markdown", created_at: "2021-12-28T13:44:48.000000Z")){}
       Spacer()
     }
   }

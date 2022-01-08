@@ -47,7 +47,7 @@ struct DeviceListView: View {
       }))
     }
     .onAppear {
-      HttpRequest.getDevices()
+      HttpRequest.loadDevices()
     }
   }
   

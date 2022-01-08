@@ -9,8 +9,6 @@ import SwiftUI
 
 /// 消息界面
 struct MessageListView: View {
-  
-  @State private var messages = Array(0..<10)
   @EnvironmentObject private var store: AppState
   
   var body: some View {
@@ -20,10 +18,17 @@ struct MessageListView: View {
           if store.isShowTestPush {
             TestPushView()
           }
-          ForEach(messages, id: \.self) { msg in
-            MessageItemView {
-              messages.removeAll { _msg in
-                _msg == msg
+          ForEach(store.messages) { messageItem in
+            MessageItemView(messageItem: messageItem) {
+              store.messages.removeAll { _messageItem in
+                _messageItem.id == messageItem.id
+              }
+              Task {
+                do {
+                  _ = try await HttpRequest.rmMessage(id: messageItem.id)
+                } catch {
+                  
+                }
               }
             }
           }
@@ -39,10 +44,16 @@ struct MessageListView: View {
           .foregroundColor(Color(UIColor.lightGray))
       }))
     }
+    .onAppear {
+      Task {
+        store.messages = try await HttpRequest.getMessages().messages
+      }
+    }
   }
 }
 
 struct TestPushView: View {
+  @EnvironmentObject private var store: AppState
   @State private var testText = ""
   var body: some View {
     TextEditor(text: $testText)
@@ -52,6 +63,21 @@ struct TestPushView: View {
     
     Button("推送测试") {
       print("点击推送测试")
+      Task {
+        if store.keys.isEmpty {
+          store.keys = try await HttpRequest.getKeys().keys
+        }
+        if let keyItem = store.keys.first {
+          _ = try await HttpRequest.push(pushkey: keyItem.key, text: testText, desp: "", type: "")
+          testText = ""
+          let messages = try await HttpRequest.getMessages().messages
+          withAnimation(.easeOut) {
+            store.messages = messages
+          }
+        } else {
+          
+        }
+      }
     }
     .font(.system(size: 20))
     .frame(width: 104, height: 42)

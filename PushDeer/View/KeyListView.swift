@@ -50,7 +50,7 @@ struct KeyListView: View {
       }))
     }
     .onAppear {
-      HttpRequest.getKeys()
+      HttpRequest.loadKeys()
     }
   }
 }

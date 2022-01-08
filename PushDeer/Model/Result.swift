@@ -66,10 +66,15 @@ struct MessageItem: Codable, Identifiable{
   let text: String
   let desp: String
   let type: String
+  let created_at: String
 }
 
 struct ActionContent: Codable{
   let message: String
+}
+
+struct PushResultContent: Codable{
+  let result: Array<String>
 }
 
 let dateFormatter = DateFormatter()
@@ -80,5 +85,18 @@ extension KeyItem {
     let createdDate = dateFormatter.date(from: self.created_at)
     dateFormatter.dateFormat = "yyyy/MM/dd"
     return dateFormatter.string(from: createdDate ?? Date())
+  }
+}
+
+extension MessageItem {
+  var createdDateStr: String {
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+    let createdDate = dateFormatter.date(from: self.created_at) ?? Date()
+    if Calendar.current.isDateInToday(createdDate) {
+      dateFormatter.dateFormat = "HH:mm:ss"
+    } else {
+      dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+    }
+    return dateFormatter.string(from: createdDate)
   }
 }

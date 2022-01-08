@@ -64,9 +64,12 @@ struct HttpRequest {
     return try await request(.rmDevice(token: AppState.shared.token, id: id), resultType: ActionContent.self)
   }
   
-  static func getDevices() {
+  static func getDevices() async throws -> DeviceContent {
+    return try await request(.getDevices(token: AppState.shared.token), resultType: DeviceContent.self)
+  }
+  static func loadDevices() {
     _Concurrency.Task {
-      let result = try await request(.getDevices(token: AppState.shared.token), resultType: DeviceContent.self)
+      let result = try await getDevices()
       AppState.shared.devices = result.devices
     }
   }
@@ -87,10 +90,25 @@ struct HttpRequest {
     return try await request(.rmKey(token: AppState.shared.token, id: id), resultType: ActionContent.self)
   }
   
-  static func getKeys() {
+  static func getKeys() async throws -> KeyContent {
+    return try await request(.getKeys(token: AppState.shared.token), resultType: KeyContent.self)
+  }
+  static func loadKeys() {
     _Concurrency.Task {
-      let result = try await request(.getKeys(token: AppState.shared.token), resultType: KeyContent.self)
+      let result = try await getKeys()
       AppState.shared.keys = result.keys
     }
+  }
+  
+  static func push(pushkey: String, text: String, desp: String, type: String) async throws -> PushResultContent {
+    return try await request(.push(pushkey: pushkey, text: text, desp: desp, type: type), resultType: PushResultContent.self)
+  }
+  
+  static func getMessages() async throws -> MessageContent {
+    return try await request(.getMessages(token: AppState.shared.token, limit: 100), resultType: MessageContent.self)
+  }
+  
+  static func rmMessage(id: Int) async throws -> ActionContent {
+    return try await request(.rmMessage(token: AppState.shared.token, id: id), resultType: ActionContent.self)
   }
 }
