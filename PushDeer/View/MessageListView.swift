@@ -11,13 +11,13 @@ import SwiftUI
 struct MessageListView: View {
   
   @State private var messages = Array(0..<10)
-  @State private var isShowTest = true
+  @EnvironmentObject private var store: AppState
   
   var body: some View {
     BaseNavigationView(title: "消息") {
       ScrollView {
         LazyVStack(alignment: .leading) {
-          if isShowTest {
+          if store.isShowTestPush {
             TestPushView()
           }
           ForEach(messages, id: \.self) { msg in
@@ -32,10 +32,10 @@ struct MessageListView: View {
       }
       .navigationBarItems(trailing: Button(action: {
         withAnimation(.easeOut) {
-          isShowTest = !isShowTest
+          store.isShowTestPush = !store.isShowTestPush
         }
       }, label: {
-        Image(systemName: isShowTest ? "chevron.up" : "chevron.down")
+        Image(systemName: store.isShowTestPush ? "chevron.up" : "chevron.down")
           .foregroundColor(Color(UIColor.lightGray))
       }))
     }

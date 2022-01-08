@@ -57,6 +57,6 @@ struct KeyListView: View {
 
 struct KeyView_Previews: PreviewProvider {
   static var previews: some View {
-    KeyListView()
+    KeyListView().environmentObject(AppState.shared)
   }
 }

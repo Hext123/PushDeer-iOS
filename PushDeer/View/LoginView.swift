@@ -12,7 +12,7 @@ import AuthenticationServices
 struct LoginView: View {
   
   @EnvironmentObject private var store: AppState
-  @State private var showLoading = true
+  @State private var showLoading = false
   
   var body: some View {
     VStack{
@@ -24,6 +24,7 @@ struct LoginView: View {
       if showLoading {
         ProgressView()
           .scaleEffect(1.5)
+          .frame(height: 64)
       } else {
         AppleSignInButton(
           onRequest: { request in
@@ -33,7 +34,6 @@ struct LoginView: View {
             do {
               showLoading = true
               store.token = try await store.appleIdLogin(result).token
-              store.userInfo = try await HttpRequest.getUserInfo()
               // 获取成功去主页
             } catch {
               showLoading = false
@@ -46,16 +46,6 @@ struct LoginView: View {
       Spacer()
     }
     .padding()
-    .onAppear {
-      Task {
-        do {
-          store.userInfo = try await HttpRequest.getUserInfo()
-          // 获取成功去主页
-        } catch {
-          showLoading = false
-        }
-      }
-    }
   }
 }
 

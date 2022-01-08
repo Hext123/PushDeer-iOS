@@ -9,16 +9,45 @@ import Foundation
 import AuthenticationServices
 
 class AppState: ObservableObject {
-  @Published var token : String = ""
+  /// 账号 token
+  @Published var token : String {
+    didSet {
+      UserDefaults.standard.set(token, forKey: "PushDeer_token")
+    }
+  }
+  /// 设备列表
   @Published var devices: [DeviceItem] = []
+  /// key 列表
   @Published var keys: [KeyItem] = []
+  /// 消息列表
   @Published var messages: [MessageItem] = []
-  @Published var tab_selected: Int = 0
-  @Published var device_token: String = ""
+  /// 选中的 tab 下标
+  @Published var tabSelectedIndex: Int {
+    didSet {
+      UserDefaults.standard.set(tabSelectedIndex, forKey: "PushDeer_tabSelectedIndex")
+    }
+  }
+  /// 设备推送 token
+  @Published var deviceToken: String = ""
+  /// 用户信息
   @Published var userInfo: UserInfoContent?
+  /// 是否显示测试发推送的 UI
+  @Published var isShowTestPush: Bool {
+    didSet {
+      UserDefaults.standard.set(isShowTestPush, forKey: "PushDeer_isShowTestPush")
+    }
+  }
+  
   
   static let shared = AppState()
-  private init() {}
+  private init() {
+    let _token = UserDefaults.standard.string(forKey: "PushDeer_token")
+    let _tabSelectedIndex = UserDefaults.standard.integer(forKey: "PushDeer_tabSelectedIndex")
+    let _isShowTestPush = UserDefaults.standard.object(forKey: "PushDeer_isShowTestPush")
+    token = _token ?? ""
+    tabSelectedIndex = _tabSelectedIndex
+    isShowTestPush = _isShowTestPush as? Bool ?? true
+  }
   
   func appleIdLogin(_ result: Result<ASAuthorization, Error>) async throws -> TokenContent {
     switch result {

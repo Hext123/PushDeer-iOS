@@ -107,7 +107,6 @@
 		52B8CF5E277DE660004CB680 /* AppleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButton.swift; sourceTree = "<group>"; };
 		52B8CF64277E0B44004CB680 /* PushDeerClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushDeerClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B8CF66277E0B44004CB680 /* PushDeerClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDeerClipApp.swift; sourceTree = "<group>"; };
-		52B8CF68277E0B44004CB680 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		52B8CF6A277E0B46004CB680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B8CF6D277E0B46004CB680 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52B8CF6F277E0B46004CB680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				52B8CF66277E0B44004CB680 /* PushDeerClipApp.swift */,
-				52B8CF68277E0B44004CB680 /* ContentView.swift */,
 				52B8CF6A277E0B46004CB680 /* Assets.xcassets */,
 				52B8CF6F277E0B46004CB680 /* Info.plist */,
 				52B8CF70277E0B46004CB680 /* PushDeerClip.entitlements */,

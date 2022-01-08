@@ -7,9 +7,15 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_adhp._tcp</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>APP需要访问本地网络以供调试(仅在开发时)</string>
 </dict>
 </plist>

@@ -30,9 +30,9 @@ struct DeviceItemView: View {
     var deviceName = deviceName.lowercased()
     deviceName = deviceName.replacingOccurrences(of: " ", with: "")
     
-    if deviceName.contains("clip") {
-      return "appclip"
-    }
+//    if deviceName.contains("clip") {
+//      return "appclip"
+//    }
     if deviceName.contains("iphone") {
       return "iphone"
     }

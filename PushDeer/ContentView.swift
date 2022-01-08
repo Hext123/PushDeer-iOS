@@ -12,7 +12,7 @@ struct ContentView: View {
   @EnvironmentObject private var store: AppState
   
   var body: some View {
-    if store.userInfo == nil {
+    if store.token.isEmpty {
       LoginView()
     } else {
       MainView()

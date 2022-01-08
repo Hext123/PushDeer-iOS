@@ -55,7 +55,7 @@ struct HttpRequest {
     return try await request(.regDevice(
       token: AppState.shared.token,
       name: UIDevice.current.name,
-      device_id: AppState.shared.device_token,
+      device_id: AppState.shared.deviceToken,
       is_clip: 0
     ), resultType: DeviceContent.self)
   }

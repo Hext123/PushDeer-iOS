@@ -10,17 +10,34 @@ import SwiftUI
 struct KeyItemTextField: View {
   let keyItem: KeyItem
   @State private var value = ""
+  @EnvironmentObject private var store: AppState
   
   init(keyItem: KeyItem) {
     self.keyItem = keyItem
-    self.value = keyItem.name
+    self._value = State(initialValue: keyItem.name)
   }
   
   func textField() -> some View {
     TextField("输入key名称", text: $value, onCommit: {
       Task {
         do {
+          // 调用接口修改
           _ = try await HttpRequest.renameKey(id: keyItem.id, name: value)
+          // 在此 keyItem 在列表中的下标
+          let index = store.keys.firstIndex { _keyItem in
+            _keyItem.id == keyItem.id
+          }
+          if let index = index {
+            let _keyItem = store.keys[index]
+            // 更新列表中相应的 keyItem
+            store.keys[index] = KeyItem(
+              id: _keyItem.id,
+              name: value,
+              uid: _keyItem.uid,
+              key: _keyItem.key,
+              created_at: _keyItem.created_at
+            )
+          }
         } catch {
           
         }

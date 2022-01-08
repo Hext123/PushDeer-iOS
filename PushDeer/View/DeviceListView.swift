@@ -56,7 +56,7 @@ struct DeviceListView: View {
     if deviceItem.is_clip == 1 {
       name += " [Clip]"
     }
-    if deviceItem.device_id == store.device_token {
+    if deviceItem.device_id == store.deviceToken {
       name += " (当前设备)"
     }
     return name
@@ -65,6 +65,6 @@ struct DeviceListView: View {
 
 struct DeviceView_Previews: PreviewProvider {
   static var previews: some View {
-    DeviceListView()
+    DeviceListView().environmentObject(AppState.shared)
   }
 }
