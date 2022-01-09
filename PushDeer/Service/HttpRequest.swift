@@ -56,7 +56,7 @@ struct HttpRequest {
       token: AppState.shared.token,
       name: UIDevice.current.name,
       device_id: AppState.shared.deviceToken,
-      is_clip: 0
+      is_clip: AppState.shared.isAppClip ? 1 : 0
     ), resultType: DeviceContent.self)
   }
   

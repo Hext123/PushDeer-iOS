@@ -38,6 +38,14 @@ class AppState: ObservableObject {
     }
   }
   
+  var isAppClip: Bool {
+#if APPCLIP
+    return true
+#else
+    return false
+#endif
+  }
+  
   
   static let shared = AppState()
   private init() {

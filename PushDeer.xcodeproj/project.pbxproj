@@ -737,6 +737,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PushDeerClip/Preview Content\"";
 				DEVELOPMENT_TEAM = Y47WTLML2S;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"APPCLIP=1",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PushDeerClip/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PushDeer;
@@ -751,6 +755,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D APPCLIP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wskfz.pushdeer.ios.Clip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -771,6 +776,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PushDeerClip/Preview Content\"";
 				DEVELOPMENT_TEAM = Y47WTLML2S;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"APPCLIP=1",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PushDeerClip/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PushDeer;
@@ -785,6 +794,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D APPCLIP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wskfz.pushdeer.ios.Clip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
