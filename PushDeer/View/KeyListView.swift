@@ -24,6 +24,7 @@ struct KeyListView: View {
               store.keys.removeAll { _keyItem in
                 keyItem.id == _keyItem.id
               }
+              HToast.showSuccess("已删除")
               Task {
                 do {
                   _ = try await HttpRequest.rmKey(id: keyItem.id)
@@ -43,6 +44,7 @@ struct KeyListView: View {
           withAnimation(.easeOut) {
             store.keys = keys
           }
+          HToast.showSuccess("已添加新Key")
         }
       }, label: {
         Image(systemName: "plus")

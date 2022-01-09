@@ -27,6 +27,8 @@
 		52483FC3277ED6D5003A100E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52483FC1277ED6D5003A100E /* AppDelegate.swift */; };
 		5287FF52278ADC8C00249A0E /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5287FF51278ADC8C00249A0E /* MarkdownUI */; };
 		5287FF54278AEA5B00249A0E /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5287FF53278AEA5B00249A0E /* MarkdownUI */; };
+		5287FF59278B3AAE00249A0E /* HToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287FF58278B3AAE00249A0E /* HToast.swift */; };
+		5287FF5A278B3AAE00249A0E /* HToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287FF58278B3AAE00249A0E /* HToast.swift */; };
 		5292F4F92776BC7900B9A7BB /* PushDeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292F4F82776BC7900B9A7BB /* PushDeerApp.swift */; };
 		5292F4FB2776BC7900B9A7BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292F4FA2776BC7900B9A7BB /* ContentView.swift */; };
 		5292F4FD2776BC7A00B9A7BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292F4FC2776BC7A00B9A7BB /* Assets.xcassets */; };
@@ -101,6 +103,7 @@
 		52450F412784943F003652D8 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		52450F442784A95D003652D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		52483FC1277ED6D5003A100E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5287FF58278B3AAE00249A0E /* HToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HToast.swift; sourceTree = "<group>"; };
 		5292F4F52776BC7900B9A7BB /* PushDeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushDeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5292F4F82776BC7900B9A7BB /* PushDeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDeerApp.swift; sourceTree = "<group>"; };
 		5292F4FA2776BC7900B9A7BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -230,6 +233,7 @@
 		52B8CF5D277DE5FF004CB680 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5287FF58278B3AAE00249A0E /* HToast.swift */,
 				52B8CF5E277DE660004CB680 /* AppleSignInButton.swift */,
 			);
 			path = Common;
@@ -501,6 +505,7 @@
 				52B8CF5F277DE660004CB680 /* AppleSignInButton.swift in Sources */,
 				52163EB92777417900594190 /* KeyListView.swift in Sources */,
 				5292F4FB2776BC7900B9A7BB /* ContentView.swift in Sources */,
+				5287FF59278B3AAE00249A0E /* HToast.swift in Sources */,
 				52450F3B278491F8003652D8 /* AppState.swift in Sources */,
 				5292F4F92776BC7900B9A7BB /* PushDeerApp.swift in Sources */,
 				52483FC2277ED6D5003A100E /* AppDelegate.swift in Sources */,
@@ -530,6 +535,7 @@
 				52B8CF81277E0BFB004CB680 /* LoginView.swift in Sources */,
 				52B8CF7F277E0BFB004CB680 /* SettingsItemView.swift in Sources */,
 				52450F3C278491F8003652D8 /* AppState.swift in Sources */,
+				5287FF5A278B3AAE00249A0E /* HToast.swift in Sources */,
 				52B8CF80277E0BFB004CB680 /* MessageItemView.swift in Sources */,
 				52483FC3277ED6D5003A100E /* AppDelegate.swift in Sources */,
 				52450F3927848243003652D8 /* PushDeerApi.swift in Sources */,

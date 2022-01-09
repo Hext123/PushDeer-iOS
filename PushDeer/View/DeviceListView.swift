@@ -21,6 +21,7 @@ struct DeviceListView: View {
               store.devices.removeAll { _deviceItem in
                 _deviceItem.id == deviceItem.id
               }
+              HToast.showSuccess("已删除")
               Task {
                 do {
                   _ = try await HttpRequest.rmDevice(id: deviceItem.id)
@@ -40,6 +41,7 @@ struct DeviceListView: View {
           withAnimation(.easeOut) {
             store.devices = devices
           }
+          HToast.showSuccess("已添加当前设备")
         }
       }, label: {
         Image(systemName: "plus")

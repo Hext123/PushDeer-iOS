@@ -23,6 +23,7 @@ struct KeyItemTextField: View {
         do {
           // 调用接口修改
           _ = try await HttpRequest.renameKey(id: keyItem.id, name: value)
+          HToast.showSuccess("已修改key名称")
           // 在此 keyItem 在列表中的下标
           let index = store.keys.firstIndex { _keyItem in
             _keyItem.id == keyItem.id
@@ -94,6 +95,7 @@ struct KeyItemView: View {
             do {
               _ = try await HttpRequest.regenKey(id: keyItem.id)
               HttpRequest.loadKeys()
+              HToast.showSuccess("已重置")
             } catch {
               
             }
@@ -109,6 +111,7 @@ struct KeyItemView: View {
         Button("复制") {
           print("点击复制")
           UIPasteboard.general.string = keyItem.key
+          HToast.showSuccess("已复制")
         }
         .font(.system(size: 20))
         .frame(width: 90, height: 42)
