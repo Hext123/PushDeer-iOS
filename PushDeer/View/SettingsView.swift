@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+//import StoreKit
 
 /// 设置界面
 struct SettingsView: View {
@@ -21,9 +22,14 @@ struct SettingsView: View {
         
         SettingsItemView(title: "自定义服务器", button: "扫码") {
         }
+        .disabled(true)
         .padding(EdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20))
         
         SettingsItemView(title: "喜欢PushDeer?", button: "评分") {
+          let urlStr = "itms-apps://itunes.apple.com/app/id\(1596771139)?action=write-review"
+          UIApplication.shared.open(URL(string: urlStr)!, options: [:], completionHandler: nil)
+          // 直接弹出系统评分控件, 不过一年最多3次, 用户还可以在系统设置里面关
+//          SKStoreReviewController.requestReview()
         }
         .padding(EdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20))
         
