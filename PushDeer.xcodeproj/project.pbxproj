@@ -25,6 +25,8 @@
 		52450F432784943F003652D8 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F412784943F003652D8 /* HttpRequest.swift */; };
 		52483FC2277ED6D5003A100E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52483FC1277ED6D5003A100E /* AppDelegate.swift */; };
 		52483FC3277ED6D5003A100E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52483FC1277ED6D5003A100E /* AppDelegate.swift */; };
+		5287FF52278ADC8C00249A0E /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5287FF51278ADC8C00249A0E /* MarkdownUI */; };
+		5287FF54278AEA5B00249A0E /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5287FF53278AEA5B00249A0E /* MarkdownUI */; };
 		5292F4F92776BC7900B9A7BB /* PushDeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292F4F82776BC7900B9A7BB /* PushDeerApp.swift */; };
 		5292F4FB2776BC7900B9A7BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292F4FA2776BC7900B9A7BB /* ContentView.swift */; };
 		5292F4FD2776BC7A00B9A7BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292F4FC2776BC7A00B9A7BB /* Assets.xcassets */; };
@@ -133,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64B0C15E70CCC382B480F76E /* Pods_PushDeer.framework in Frameworks */,
+				5287FF52278ADC8C00249A0E /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4812F19BB0BFEFE089BC253E /* Pods_PushDeerClip.framework in Frameworks */,
+				5287FF54278AEA5B00249A0E /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +313,9 @@
 				52B8CF72277E0B46004CB680 /* PBXTargetDependency */,
 			);
 			name = PushDeer;
+			packageProductDependencies = (
+				5287FF51278ADC8C00249A0E /* MarkdownUI */,
+			);
 			productName = PushDeer;
 			productReference = 5292F4F52776BC7900B9A7BB /* PushDeer.app */;
 			productType = "com.apple.product-type.application";
@@ -328,6 +335,9 @@
 			dependencies = (
 			);
 			name = PushDeerClip;
+			packageProductDependencies = (
+				5287FF53278AEA5B00249A0E /* MarkdownUI */,
+			);
 			productName = PushDeerClip;
 			productReference = 52B8CF64277E0B44004CB680 /* PushDeerClip.app */;
 			productType = "com.apple.product-type.application.on-demand-install-capable";
@@ -359,6 +369,9 @@
 				Base,
 			);
 			mainGroup = 5292F4EC2776BC7900B9A7BB;
+			packageReferences = (
+				5287FF50278ADC8C00249A0E /* XCRemoteSwiftPackageReference "MarkdownUI" */,
+			);
 			productRefGroup = 5292F4F62776BC7900B9A7BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -834,6 +847,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5287FF50278ADC8C00249A0E /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5287FF51278ADC8C00249A0E /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5287FF50278ADC8C00249A0E /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
+		5287FF53278AEA5B00249A0E /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5287FF50278ADC8C00249A0E /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5292F4ED2776BC7900B9A7BB /* Project object */;
 }
