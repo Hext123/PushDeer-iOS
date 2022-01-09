@@ -24,6 +24,9 @@ struct HttpRequest {
             print(result)
             if let content = result.content, result.code == 0 {
               continuation.resume(returning: content)
+            } else if result.code == 80403 {
+              AppState.shared.token = ""
+              continuation.resume(throwing: NSError(domain: result.error ?? "接口报错", code: result.code, userInfo: nil))
             } else {
               continuation.resume(throwing: NSError(domain: result.error ?? "接口报错", code: result.code, userInfo: nil))
             }

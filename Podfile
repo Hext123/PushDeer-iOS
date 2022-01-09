@@ -7,6 +7,7 @@ use_frameworks!
 def commonPods
   # Pods for common
   pod 'Moya', '~> 15.0'
+  pod 'SDWebImageSwiftUI', '~> 2.0.2'
   
   # pod 'WoodPeckeriOS', :configurations => ['Debug']
 end
