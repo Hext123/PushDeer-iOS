@@ -66,7 +66,9 @@ struct HttpRequest {
   static func rmDevice(id: Int) async throws -> ActionContent {
     return try await request(.rmDevice(token: AppState.shared.token, id: id), resultType: ActionContent.self)
   }
-  
+  static func renameDevice(id: Int, name: String) async throws -> ActionContent {
+    return try await request(.renameDevice(token: AppState.shared.token, id: id, name: name), resultType: ActionContent.self)
+  }
   static func getDevices() async throws -> DeviceContent {
     return try await request(.getDevices(token: AppState.shared.token), resultType: DeviceContent.self)
   }

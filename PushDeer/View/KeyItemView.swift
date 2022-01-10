@@ -7,60 +7,10 @@
 
 import SwiftUI
 
-struct KeyItemTextField: View {
-  let keyItem: KeyItem
-  @State private var value = ""
-  @EnvironmentObject private var store: AppState
-  
-  init(keyItem: KeyItem) {
-    self.keyItem = keyItem
-    self._value = State(initialValue: keyItem.name)
-  }
-  
-  func textField() -> some View {
-    TextField("输入key名称", text: $value, onCommit: {
-      Task {
-        do {
-          // 调用接口修改
-          _ = try await HttpRequest.renameKey(id: keyItem.id, name: value)
-          HToast.showSuccess("已修改key名称")
-          // 在此 keyItem 在列表中的下标
-          let index = store.keys.firstIndex { _keyItem in
-            _keyItem.id == keyItem.id
-          }
-          if let index = index {
-            let _keyItem = store.keys[index]
-            // 更新列表中相应的 keyItem
-            store.keys[index] = KeyItem(
-              id: _keyItem.id,
-              name: value,
-              uid: _keyItem.uid,
-              key: _keyItem.key,
-              created_at: _keyItem.created_at
-            )
-          }
-        } catch {
-          
-        }
-      }
-    })
-      .font(.system(size: 20))
-      .foregroundColor(Color.accentColor)
-  }
-  
-  var body: some View {
-    if #available(iOS 15.0, *) {
-      textField()
-        .submitLabel(.done)
-    } else {
-      textField()
-    }
-  }
-}
-
 /// 每个 Key 项的 View
 struct KeyItemView: View {
   let keyItem: KeyItem
+  @EnvironmentObject private var store: AppState
   
   var body: some View {
     VStack(spacing: 20) {
@@ -69,7 +19,19 @@ struct KeyItemView: View {
           .resizable()
           .scaledToFit()
           .frame(width: 38, height: 38)
-        KeyItemTextField(keyItem: keyItem)
+        EditableText(placeholder: "输入key名称", value: keyItem.name) { value in
+          Task {
+            // 调用接口修改
+            _ = try await HttpRequest.renameKey(id: keyItem.id, name: value)
+            HToast.showSuccess("已修改key名称")
+            // 在此 keyItem 在列表中的下标
+            let index = store.keys.firstIndex { $0.id == keyItem.id }
+            if let index = index {
+              // 更新列表中相应的 keyItem
+              store.keys[index].name = value
+            }
+          }
+        }
         Spacer()
         Image(systemName: "calendar")
           .font(.system(size: 14))
@@ -127,5 +89,6 @@ struct KeyItemView: View {
 struct KeyItemView_Previews: PreviewProvider {
   static var previews: some View {
     KeyItemView(keyItem: KeyItem(id: 1, name: "name", uid: "1", key: "Key", created_at: "1111"))
+      .environmentObject(AppState.shared)
   }
 }

@@ -34,7 +34,7 @@ struct UserInfoContent: Codable{
 struct DeviceItem: Codable, Identifiable{
   let id: Int
   let uid: String
-  let name: String
+  var name: String
   let type: String
   let device_id: String
   let is_clip: Int
@@ -50,7 +50,7 @@ struct KeyContent: Codable{
 
 struct KeyItem: Codable, Identifiable{
   let id: Int
-  let name: String
+  var name: String
   let uid: String
   let key: String
   let created_at: String
@@ -66,6 +66,7 @@ struct MessageItem: Codable, Identifiable{
   let text: String
   let desp: String
   let type: String
+  let pushkey_name: String
   let created_at: String
 }
 

@@ -16,7 +16,7 @@ struct DeviceListView: View {
         LazyVStack(alignment: .center) {
           ForEach(store.devices.reversed()) { deviceItem in
             DeletableView(contentView: {
-              DeviceItemView(name: getName(deviceItem: deviceItem))
+              DeviceItemView(deviceItem: deviceItem)
             }, deleteAction: {
               store.devices.removeAll { _deviceItem in
                 _deviceItem.id == deviceItem.id
@@ -37,6 +37,11 @@ struct DeviceListView: View {
       }
       .navigationBarItems(trailing: Button(action: {
         Task {
+          let hasContains = store.devices.contains { store.deviceToken == $0.device_id }
+          if hasContains {
+            HToast.showInfo("已添加过当前设备")
+            return;
+          }
           let devices = try await HttpRequest.regDevice().devices
           withAnimation(.easeOut) {
             store.devices = devices
@@ -51,17 +56,6 @@ struct DeviceListView: View {
     .onAppear {
       HttpRequest.loadDevices()
     }
-  }
-  
-  func getName(deviceItem: DeviceItem) -> String {
-    var name = deviceItem.name
-    if deviceItem.is_clip == 1 {
-      name += " [Clip]"
-    }
-    if deviceItem.device_id == store.deviceToken {
-      name += " (当前设备)"
-    }
-    return name
   }
 }
 

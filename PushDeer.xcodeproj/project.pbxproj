@@ -15,6 +15,8 @@
 		52163EBB277741AC00594190 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52163EBA277741AC00594190 /* SettingsView.swift */; };
 		523150D9277875FB00941EDC /* DeletableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523150D8277875FB00941EDC /* DeletableView.swift */; };
 		523150DC2778762B00941EDC /* DeviceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523150DB2778762B00941EDC /* DeviceItemView.swift */; };
+		5242C872278C8CBB00FDB27E /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242C871278C8CBB00FDB27E /* EditableText.swift */; };
+		5242C873278C8CBB00FDB27E /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242C871278C8CBB00FDB27E /* EditableText.swift */; };
 		52450F3827848243003652D8 /* PushDeerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3727848243003652D8 /* PushDeerApi.swift */; };
 		52450F3927848243003652D8 /* PushDeerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3727848243003652D8 /* PushDeerApi.swift */; };
 		52450F3B278491F8003652D8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3A278491F8003652D8 /* AppState.swift */; };
@@ -97,6 +99,7 @@
 		52163EBA277741AC00594190 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		523150D8277875FB00941EDC /* DeletableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletableView.swift; sourceTree = "<group>"; };
 		523150DB2778762B00941EDC /* DeviceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceItemView.swift; sourceTree = "<group>"; };
+		5242C871278C8CBB00FDB27E /* EditableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableText.swift; sourceTree = "<group>"; };
 		52450F3727848243003652D8 /* PushDeerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDeerApi.swift; sourceTree = "<group>"; };
 		52450F3A278491F8003652D8 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		52450F3E2784923D003652D8 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -266,6 +269,7 @@
 				523150D8277875FB00941EDC /* DeletableView.swift */,
 				52EB90AB2778ADF80048E0ED /* CardView.swift */,
 				52EB90B22778DA4E0048E0ED /* Line.swift */,
+				5242C871278C8CBB00FDB27E /* EditableText.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -498,6 +502,7 @@
 				523150DC2778762B00941EDC /* DeviceItemView.swift in Sources */,
 				523150D9277875FB00941EDC /* DeletableView.swift in Sources */,
 				52163EBB277741AC00594190 /* SettingsView.swift in Sources */,
+				5242C872278C8CBB00FDB27E /* EditableText.swift in Sources */,
 				52163EB327773F8400594190 /* MainView.swift in Sources */,
 				52EB90B32778DA4E0048E0ED /* Line.swift in Sources */,
 				52F2C223277961D7006F08DC /* SettingsItemView.swift in Sources */,
@@ -528,6 +533,7 @@
 				52B8CF78277E0BF1004CB680 /* MainView.swift in Sources */,
 				52B8CF79277E0BFB004CB680 /* DeviceListView.swift in Sources */,
 				52B8CF84277E0C12004CB680 /* CardView.swift in Sources */,
+				5242C873278C8CBB00FDB27E /* EditableText.swift in Sources */,
 				52B8CF7E277E0BFB004CB680 /* SettingsView.swift in Sources */,
 				52B8CF7C277E0BFB004CB680 /* KeyListView.swift in Sources */,
 				52B8CF7A277E0BFB004CB680 /* MessageListView.swift in Sources */,
