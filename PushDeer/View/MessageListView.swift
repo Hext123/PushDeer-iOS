@@ -23,7 +23,7 @@ struct MessageListView: View {
               store.messages.removeAll { _messageItem in
                 _messageItem.id == messageItem.id
               }
-              HToast.showSuccess("已删除")
+              HToast.showSuccess(NSLocalizedString("已删除", comment: "删除设备/Key/消息时提示"))
               Task {
                 do {
                   _ = try await HttpRequest.rmMessage(id: messageItem.id)
@@ -65,7 +65,7 @@ struct TestPushView: View {
     Button("推送测试") {
       print("点击推送测试")
       if testText.isEmpty {
-        HToast.showError("推送失败, 请先输入推送内容")
+        HToast.showError(NSLocalizedString("推送失败, 请先输入推送内容", comment: ""))
         return
       }
       Task {
@@ -75,13 +75,13 @@ struct TestPushView: View {
         if let keyItem = store.keys.first {
           _ = try await HttpRequest.push(pushkey: keyItem.key, text: testText, desp: "", type: "")
           testText = ""
-          HToast.showSuccess("推送成功")
+          HToast.showSuccess(NSLocalizedString("推送成功", comment: ""))
           let messages = try await HttpRequest.getMessages().messages
           withAnimation(.easeOut) {
             store.messages = messages
           }
         } else {
-          HToast.showError("推送失败, 请先添加一个Key")
+          HToast.showError(NSLocalizedString("推送失败, 请先添加一个Key", comment: ""))
         }
       }
     }

@@ -21,7 +21,7 @@ struct DeviceListView: View {
               store.devices.removeAll { _deviceItem in
                 _deviceItem.id == deviceItem.id
               }
-              HToast.showSuccess("已删除")
+              HToast.showSuccess(NSLocalizedString("已删除", comment: "删除设备/Key/消息时提示"))
               Task {
                 do {
                   _ = try await HttpRequest.rmDevice(id: deviceItem.id)
@@ -39,14 +39,14 @@ struct DeviceListView: View {
         Task {
           let hasContains = store.devices.contains { store.deviceToken == $0.device_id }
           if hasContains {
-            HToast.showInfo("已添加过当前设备")
+            HToast.showInfo(NSLocalizedString("已添加过当前设备", comment: ""))
             return;
           }
           let devices = try await HttpRequest.regDevice().devices
           withAnimation(.easeOut) {
             store.devices = devices
           }
-          HToast.showSuccess("已添加当前设备")
+          HToast.showSuccess(NSLocalizedString("已添加当前设备", comment: ""))
         }
       }, label: {
         Image(systemName: "plus")

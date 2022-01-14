@@ -83,7 +83,7 @@ struct MessageContentView: View {
         .contextMenu {
           Button {
             UIPasteboard.general.image = image
-            HToast.showSuccess("已拷贝")
+            HToast.showSuccess(NSLocalizedString("已拷贝", comment: ""))
           } label: {
             Label("拷贝图片",systemImage: "doc.on.doc")
           }
@@ -95,10 +95,10 @@ struct MessageContentView: View {
               DispatchQueue.main.async {
                 if isSuccess {// 成功
                   print("Success")
-                  HToast.showSuccess("保存成功")
+                  HToast.showSuccess(NSLocalizedString("保存成功", comment: ""))
                 } else {
                   print(error as Any)
-                  HToast.showError("保存失败")
+                  HToast.showError(NSLocalizedString("保存失败", comment: ""))
                 }
               }
             }
@@ -126,7 +126,7 @@ struct MessageContentView: View {
         .contextMenu {
           Button {
             UIPasteboard.general.string = messageItem.text + messageItem.desp
-            HToast.showSuccess("已复制")
+            HToast.showSuccess(NSLocalizedString("已复制", comment: ""))
           } label: {
             Label("复制",systemImage: "doc.on.doc")
           }

@@ -19,11 +19,11 @@ struct KeyItemView: View {
           .resizable()
           .scaledToFit()
           .frame(width: 38, height: 38)
-        EditableText(placeholder: "输入key名称", value: keyItem.name) { value in
+        EditableText(placeholder: NSLocalizedString("输入key名称", comment: ""), value: keyItem.name) { value in
           Task {
             // 调用接口修改
             _ = try await HttpRequest.renameKey(id: keyItem.id, name: value)
-            HToast.showSuccess("已修改key名称")
+            HToast.showSuccess(NSLocalizedString("已修改key名称", comment: ""))
             // 在此 keyItem 在列表中的下标
             let index = store.keys.firstIndex { $0.id == keyItem.id }
             if let index = index {
@@ -51,13 +51,13 @@ struct KeyItemView: View {
       HLine().stroke(Color.gray, style: StrokeStyle(lineWidth: 1, dash: [5]))
       
       HStack {
-        Button("重置") {
+        Button(NSLocalizedString("重置", comment: "重置key的按钮标题")) {
           print("点击重置")
           Task {
             do {
               _ = try await HttpRequest.regenKey(id: keyItem.id)
               HttpRequest.loadKeys()
-              HToast.showSuccess("已重置")
+              HToast.showSuccess(NSLocalizedString("已重置", comment: "已重置key的提示"))
             } catch {
               
             }
@@ -70,10 +70,10 @@ struct KeyItemView: View {
         
         Spacer()
         
-        Button("复制") {
+        Button(NSLocalizedString("复制", comment: "复制按钮的标题")) {
           print("点击复制")
           UIPasteboard.general.string = keyItem.key
-          HToast.showSuccess("已复制")
+          HToast.showSuccess(NSLocalizedString("已复制", comment: ""))
         }
         .font(.system(size: 20))
         .frame(width: 90, height: 42)

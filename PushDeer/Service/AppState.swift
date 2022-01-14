@@ -85,7 +85,7 @@ class AppState: ObservableObject {
       print(error)
     }
     // 登录失败
-    throw NSError(domain: "登录失败", code: -1, userInfo: nil)
+    throw NSError(domain: NSLocalizedString("登录失败", comment: "AppleId登录失败时提示"), code: -1, userInfo: nil)
   }
   
 }

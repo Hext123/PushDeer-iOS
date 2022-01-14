@@ -29,11 +29,11 @@ struct DeviceItemView: View {
         }
         .padding(EdgeInsets(top: 0, leading: 18, bottom: 0, trailing: 8))
         
-        EditableText(placeholder: "输入设备名称", value: deviceItem.name) { value in
+        EditableText(placeholder: NSLocalizedString("输入设备名称", comment: ""), value: deviceItem.name) { value in
           Task {
             // 调用接口修改
             _ = try await HttpRequest.renameDevice(id: deviceItem.id, name: value)
-            HToast.showSuccess("已修改设备名称")
+            HToast.showSuccess(NSLocalizedString("已修改设备名称", comment: ""))
             // 在此 Item 在列表中的下标
             let index = store.devices.firstIndex { $0.id == deviceItem.id }
             if let index = index {
@@ -56,7 +56,7 @@ struct DeviceItemView: View {
     //      name += " [Clip]"
     //    }
     if deviceItem.device_id == store.deviceToken {
-      name += "(当前设备)"
+      name += NSLocalizedString("(当前设备)", comment: "在设备列表中标识当前设备")
     }
     return name
   }
