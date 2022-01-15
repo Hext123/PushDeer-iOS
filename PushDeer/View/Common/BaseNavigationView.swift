@@ -17,8 +17,13 @@ struct BaseNavigationView<Content : View> : View {
   var body: some View {
     NavigationView {
       ZStack {
-        Spacer()
-          .frame(width: .infinity, height: .infinity)
+        // VStack HStack Spacer 组合起来撑到最大
+        VStack {
+          HStack {
+            Spacer()
+          }
+          Spacer()
+        }
         contentView
       }
       .background(
