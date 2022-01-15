@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 import Photos
 
 struct MessageItemView: View {
-  let messageItem: MessageItem
+  let messageItem: MessageModel
   /// 删除按钮点击的回调
   let deleteAction : () -> ()
   
@@ -24,7 +24,7 @@ struct MessageItemView: View {
           .resizable()
           .scaledToFit()
           .frame(width: 38, height: 38)
-        Text(messageItem.pushkey_name)
+        Text(messageItem.pushkey_name ?? "")
           .font(.system(size: 14))
           .foregroundColor(Color(UIColor.darkGray))
         Text(messageItem.createdDateStr)
@@ -45,7 +45,7 @@ struct MessageItemView: View {
 }
 
 struct MessageContentView: View {
-  let messageItem: MessageItem
+  let messageItem: MessageModel
   @State private var image: PlatformImage? = nil
   
   var body: some View {
@@ -53,15 +53,15 @@ struct MessageContentView: View {
     case "markdown":
       CardView {
         VStack(alignment: .leading, spacing: 5) {
-          Markdown(Document(messageItem.text))
+          Markdown(Document(messageItem.text ?? ""))
             .markdownStyle(
               DefaultMarkdownStyle(
                 font: .system(size: 14),
                 foregroundColor: UIColor.darkGray
               )
             )
-          if !messageItem.desp.isEmpty {
-            Markdown(Document(messageItem.desp))
+          if !(messageItem.desp?.isEmpty ?? true) {
+            Markdown(Document(messageItem.desp!))
               .markdownStyle(
                 DefaultMarkdownStyle(
                   font: .system(size: 14),
@@ -74,7 +74,7 @@ struct MessageContentView: View {
       }
       
     case "image":
-      WebImage(url: URL(string: messageItem.text))
+      WebImage(url: URL(string: messageItem.text ?? ""))
         .onSuccess { image, data, cacheType in
           self.image = image
         }
@@ -111,13 +111,13 @@ struct MessageContentView: View {
       CardView {
         VStack(alignment: .leading, spacing: 5) {
           HStack{
-            Text(messageItem.text)
+            Text(messageItem.text ?? "")
               .font(.system(size: 14))
               .foregroundColor(Color(UIColor.darkGray))
             Spacer(minLength: 0)
           }
-          if !messageItem.desp.isEmpty {
-            Text(messageItem.desp)
+          if !(messageItem.desp?.isEmpty ?? true) {
+            Text(messageItem.desp ?? "")
               .font(.system(size: 14))
               .foregroundColor(Color(UIColor.darkGray))
           }
@@ -125,7 +125,7 @@ struct MessageContentView: View {
         .padding()
         .contextMenu {
           Button {
-            UIPasteboard.general.string = messageItem.text + messageItem.desp
+            UIPasteboard.general.string = (messageItem.text ?? "") + (messageItem.desp ?? "")
             HToast.showSuccess(NSLocalizedString("已复制", comment: ""))
           } label: {
             Label("复制",systemImage: "doc.on.doc")
@@ -139,13 +139,13 @@ struct MessageContentView: View {
 struct MessageItemView_Previews: PreviewProvider {
   static var previews: some View {
     VStack {
-      MessageItemView(messageItem: MessageItem(id: 1, uid: "1", text: "纯文本的效果", desp: "你好呀", type: "text", pushkey_name: "Key", created_at: "2022-01-08T18:00:48.000000Z")){}
-      MessageItemView(messageItem: MessageItem(id: 1, uid: "1", text: "纯文本的效果纯文本的效果纯文本的效果纯文本的效果纯文本的效果纯文本的效果纯文本的效果", desp: "", type: "text", pushkey_name: "Key", created_at: "2022-01-08T18:00:48.000000Z")){}
-      MessageItemView(messageItem: MessageItem(id: 1, uid: "1", text: "https://blog.wskfz.com/usr/uploads/2018/06/2498727457.png", desp: "", type: "image", pushkey_name: "Key1", created_at: "2022-01-08T18:00:48.000000Z")){}
-      MessageItemView(messageItem: MessageItem(id: 1, uid: "1", text: "https://blog.wskfz.com/usr/uploads/2018/06/2151130181.png", desp: "", type: "image", pushkey_name: "Key2", created_at: "2022-01-08T18:00:48.000000Z")){}
-      MessageItemView(messageItem: MessageItem(id: 1, uid: "1", text: "https://blog.wskfz.com/usr/uploads/2018/06/1718629805.png", desp: "", type: "image", pushkey_name: "Key2", created_at: "2022-01-08T18:00:48.000000Z")){}
-      MessageItemView(messageItem: MessageItem(id: 1, uid: "1", text: "*MarkDown*的**效果**", desp: "*MarkDown*的**效果**", type: "markdown", pushkey_name: "Key", created_at: "2021-12-28T13:44:48.000000Z")){}
-      MessageItemView(messageItem: MessageItem(id: 1, uid: "1", text: """
+      MessageItemView(messageItem: MessageModel(id: 1, uid: "1", text: "纯文本的效果", desp: "你好呀", type: "text", pushkey_name: "Key", created_at: "2022-01-08T18:00:48.000000Z")){}
+      MessageItemView(messageItem: MessageModel(id: 1, uid: "1", text: "纯文本的效果纯文本的效果纯文本的效果纯文本的效果纯文本的效果纯文本的效果纯文本的效果", desp: "", type: "text", pushkey_name: "Key", created_at: "2022-01-08T18:00:48.000000Z")){}
+      MessageItemView(messageItem: MessageModel(id: 1, uid: "1", text: "https://blog.wskfz.com/usr/uploads/2018/06/2498727457.png", desp: "", type: "image", pushkey_name: "Key1", created_at: "2022-01-08T18:00:48.000000Z")){}
+      MessageItemView(messageItem: MessageModel(id: 1, uid: "1", text: "https://blog.wskfz.com/usr/uploads/2018/06/2151130181.png", desp: "", type: "image", pushkey_name: "Key2", created_at: "2022-01-08T18:00:48.000000Z")){}
+      MessageItemView(messageItem: MessageModel(id: 1, uid: "1", text: "https://blog.wskfz.com/usr/uploads/2018/06/1718629805.png", desp: "", type: "image", pushkey_name: "Key2", created_at: "2022-01-08T18:00:48.000000Z")){}
+      MessageItemView(messageItem: MessageModel(id: 1, uid: "1", text: "*MarkDown*的**效果**", desp: "*MarkDown*的**效果**", type: "markdown", pushkey_name: "Key", created_at: "2021-12-28T13:44:48.000000Z")){}
+      MessageItemView(messageItem: MessageModel(id: 1, uid: "1", text: """
 It's very easy to make some words **bold** and other words *italic* with Markdown.
 
 **Want to experiment with Markdown?** Play with the [reference CommonMark

@@ -20,7 +20,7 @@ class AppState: ObservableObject {
   /// key 列表
   @Published var keys: [KeyItem] = []
   /// 消息列表
-  @Published var messages: [MessageItem] = []
+//  @Published var messages: [MessageItem] = []
   /// 选中的 tab 下标
   @Published var tabSelectedIndex: Int {
     didSet {

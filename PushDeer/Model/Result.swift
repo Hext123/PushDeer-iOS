@@ -88,16 +88,3 @@ extension KeyItem {
     return dateFormatter.string(from: createdDate ?? Date())
   }
 }
-
-extension MessageItem {
-  var createdDateStr: String {
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
-    let createdDate = dateFormatter.date(from: self.created_at) ?? Date()
-    if Calendar.current.isDateInToday(createdDate) {
-      dateFormatter.dateFormat = "HH:mm:ss"
-    } else {
-      dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
-    }
-    return dateFormatter.string(from: createdDate)
-  }
-}
