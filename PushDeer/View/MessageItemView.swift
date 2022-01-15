@@ -76,19 +76,40 @@ struct MessageContentView: View {
     case "image":
       WebImage(url: URL(string: messageItem.text ?? ""))
         .onSuccess { image, data, cacheType in
-          self.image = image
+          DispatchQueue.main.async {
+            self.image = image
+          }
         }
         .resizable()
+        .placeholder(content: {
+          ZStack {
+            Color.gray.opacity(0.5)
+            Image(systemName: "photo")
+              .foregroundColor(.gray)
+              .font(.system(size: 100))
+          }
+          .frame(width: nil, height: 200, alignment: .center)
+        })
+        .indicator(.activity)
+        .transition(.fade(duration: 0.5))
         .scaledToFill()
+        .background(Color.white)
         .contextMenu {
           Button {
+            guard let image = image else {
+              HToast.showWarning(NSLocalizedString("图片未加载成功", comment: ""))
+              return
+            }
             UIPasteboard.general.image = image
             HToast.showSuccess(NSLocalizedString("已拷贝", comment: ""))
           } label: {
             Label("拷贝图片",systemImage: "doc.on.doc")
           }
           Button {
-            guard let image = image else { return }
+            guard let image = image else {
+              HToast.showWarning(NSLocalizedString("图片未加载成功", comment: ""))
+              return
+            }
             PHPhotoLibrary.shared().performChanges {
               PHAssetChangeRequest.creationRequestForAsset(from: image)
             } completionHandler: { (isSuccess, error) in

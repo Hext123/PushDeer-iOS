@@ -34,7 +34,13 @@ extension MessageModel {
   var createdDateStr: String {
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
     let createdDate = dateFormatter.date(from: self.created_at ?? "") ?? Date()
-    if Calendar.current.isDateInToday(createdDate) {
+    let timeInterval = -createdDate.timeIntervalSinceNow
+    let minute = Int(floor(timeInterval / 60))
+    if minute == 0 {
+      return "刚刚"
+    } else if minute <= 30 {
+      return "\(minute)分钟前"
+    } else if Calendar.current.isDateInToday(createdDate) {
       dateFormatter.dateFormat = "HH:mm:ss"
     } else {
       dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"

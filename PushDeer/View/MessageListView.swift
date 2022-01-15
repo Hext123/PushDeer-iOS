@@ -24,12 +24,13 @@ struct MessageListView: View {
           }
           ForEach(messages) { messageItem in
             MessageItemView(messageItem: messageItem) {
+              let id = messageItem.id
               viewContext.delete(messageItem)
               try? viewContext.save()
               HToast.showSuccess(NSLocalizedString("已删除", comment: "删除设备/Key/消息时提示"))
               Task {
                 do {
-                  _ = try await HttpRequest.rmMessage(id: Int(messageItem.id))
+                  _ = try await HttpRequest.rmMessage(id: Int(id))
                 } catch {
                   
                 }
