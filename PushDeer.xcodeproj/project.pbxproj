@@ -17,6 +17,8 @@
 		523150DC2778762B00941EDC /* DeviceItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523150DB2778762B00941EDC /* DeviceItemView.swift */; };
 		5242C872278C8CBB00FDB27E /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242C871278C8CBB00FDB27E /* EditableText.swift */; };
 		5242C873278C8CBB00FDB27E /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242C871278C8CBB00FDB27E /* EditableText.swift */; };
+		5243372727A6D86200190D00 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5243372627A6D86200190D00 /* Env.swift */; };
+		5243372827A6D86200190D00 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5243372627A6D86200190D00 /* Env.swift */; };
 		52450F3827848243003652D8 /* PushDeerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3727848243003652D8 /* PushDeerApi.swift */; };
 		52450F3927848243003652D8 /* PushDeerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3727848243003652D8 /* PushDeerApi.swift */; };
 		52450F3B278491F8003652D8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52450F3A278491F8003652D8 /* AppState.swift */; };
@@ -109,6 +111,7 @@
 		523150D8277875FB00941EDC /* DeletableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletableView.swift; sourceTree = "<group>"; };
 		523150DB2778762B00941EDC /* DeviceItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceItemView.swift; sourceTree = "<group>"; };
 		5242C871278C8CBB00FDB27E /* EditableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableText.swift; sourceTree = "<group>"; };
+		5243372627A6D86200190D00 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		52450F3727848243003652D8 /* PushDeerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDeerApi.swift; sourceTree = "<group>"; };
 		52450F3A278491F8003652D8 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		52450F3E2784923D003652D8 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 				52450F3D27849228003652D8 /* Model */,
 				52F0243D2777370F0071D861 /* View */,
 				52F0243C277733CE0071D861 /* PushDeer.entitlements */,
+				5243372627A6D86200190D00 /* Env.swift */,
 				52483FC1277ED6D5003A100E /* AppDelegate.swift */,
 				5292F4F82776BC7900B9A7BB /* PushDeerApp.swift */,
 				5292F4FA2776BC7900B9A7BB /* ContentView.swift */,
@@ -535,6 +539,7 @@
 				52B8CF5F277DE660004CB680 /* AppleSignInButton.swift in Sources */,
 				52163EB92777417900594190 /* KeyListView.swift in Sources */,
 				5292F4FB2776BC7900B9A7BB /* ContentView.swift in Sources */,
+				5243372727A6D86200190D00 /* Env.swift in Sources */,
 				5287FF59278B3AAE00249A0E /* HToast.swift in Sources */,
 				52450F3B278491F8003652D8 /* AppState.swift in Sources */,
 				5292F4F92776BC7900B9A7BB /* PushDeerApp.swift in Sources */,
@@ -569,6 +574,7 @@
 				52B8CF81277E0BFB004CB680 /* LoginView.swift in Sources */,
 				52B8CF7F277E0BFB004CB680 /* SettingsItemView.swift in Sources */,
 				52450F3C278491F8003652D8 /* AppState.swift in Sources */,
+				5243372827A6D86200190D00 /* Env.swift in Sources */,
 				5287FF5A278B3AAE00249A0E /* HToast.swift in Sources */,
 				52B8CF80277E0BFB004CB680 /* MessageItemView.swift in Sources */,
 				526A1E752791E52600BA2177 /* PushDeerApp.swift in Sources */,

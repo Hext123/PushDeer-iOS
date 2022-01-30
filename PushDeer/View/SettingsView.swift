@@ -20,16 +20,17 @@ struct SettingsView: View {
         }
         .padding(EdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20))
         
-        SettingsItemView(title: NSLocalizedString("自定义服务器", comment: ""), button: NSLocalizedString("扫码", comment: "")) {
+        if Env.isSelfHosted {
+          SettingsItemView(title: NSLocalizedString("自定义服务器", comment: ""), button: NSLocalizedString("扫码", comment: "")) {
+          }
+          .padding(EdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20))
         }
-        .disabled(true)
-        .padding(EdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20))
         
         SettingsItemView(title: NSLocalizedString("喜欢PushDeer?", comment: ""), button: NSLocalizedString("评分", comment: "")) {
           let urlStr = "itms-apps://itunes.apple.com/app/id\(1596771139)?action=write-review"
           UIApplication.shared.open(URL(string: urlStr)!, options: [:], completionHandler: nil)
           // 直接弹出系统评分控件, 不过一年最多3次, 用户还可以在系统设置里面关
-//          SKStoreReviewController.requestReview()
+          //          SKStoreReviewController.requestReview()
         }
         .padding(EdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20))
         
