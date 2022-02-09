@@ -34,7 +34,13 @@ enum PushDeerApi {
 }
 
 extension PushDeerApi: TargetType {
-  var baseURL: URL { URL( string: Env.baseURL )! }
+  var baseURL: URL {
+    var urlStr = Env.onlineApiEndpoint
+    if Env.isSelfHosted && !AppState.shared.api_endpoint.isEmpty {
+      urlStr = AppState.shared.api_endpoint
+    }
+    return URL(string: urlStr)!
+  }
   var path: String {
     switch self {
     case .fake:

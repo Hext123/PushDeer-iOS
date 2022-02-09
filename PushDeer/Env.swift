@@ -11,7 +11,8 @@ import Foundation
 struct Env {
   /// 是否是自建服务, 自建服务为 true, 在线服务为 false
   static let isSelfHosted = true
-  /// 后端 Api 的 baseURL 地址
-  static let baseURL = "http://pushdeer.wskfz.com:8800"
-  
+  /// 在线版本的 Api Endpoint
+  static let onlineApiEndpoint = "http://pushdeer.wskfz.com:8800"
+  /// AppStore 的 appId, 自建版: 1608017631; 在线版: 1596771139
+  static let appStoreId = isSelfHosted ? 1608017631 : 1596771139
 }
