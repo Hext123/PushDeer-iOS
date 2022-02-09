@@ -16,6 +16,9 @@ struct PushDeerApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+          UIApplication.shared.applicationIconBadgeNumber = 0
+        }
         .environmentObject(store)
         .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
