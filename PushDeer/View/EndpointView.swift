@@ -57,7 +57,7 @@ struct EndpointView: View {
           endpoint = String(endpoint.dropLast())
         }
         
-        if endpoint == "https://api2.pushdeer.com" {
+        if endpoint == Env.onlineApiEndpoint {
           HToast.showError(NSLocalizedString("请输入自架服务器的 Endpoint 或者使用非自架版PushDeer", comment: ""))
           return
         }
