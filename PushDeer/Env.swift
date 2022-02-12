@@ -18,7 +18,7 @@ struct Env {
     #endif
   }()
   /// 在线版本的 Api Endpoint
-  static let onlineApiEndpoint = "https://api2.pushdeer.com"
+  static let onlineApiEndpoint = "http://pushdeer.wskfz.com:8800"
   /// AppStore 的 appId, 自建版: 1608017631; 在线版: 1596771139
   static let appStoreId = isSelfHosted ? 1608017631 : 1596771139
 }
