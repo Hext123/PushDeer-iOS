@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 这是一个测试代码, 测试APP中几个列表改成List的可行性, 最后证明在iOS 15以上勉强可以, iOS 14 不太行, 样式达不到UI标准
 struct ListTestView: View {
   var body: some View {
     List {
