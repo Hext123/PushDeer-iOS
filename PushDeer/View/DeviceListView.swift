@@ -10,6 +10,7 @@ import SwiftUI
 /// 设备界面
 struct DeviceListView: View {
   @EnvironmentObject private var store: AppState
+  @State private var isShowAlert = false
   var body: some View {
     BaseNavigationView(title: "设备") {
       ScrollView {
@@ -35,26 +36,55 @@ struct DeviceListView: View {
           Spacer(minLength: 30)
         }
       }
-      .navigationBarItems(trailing: Button(action: {
-        Task {
-          let hasContains = store.devices.contains { store.deviceToken == $0.device_id }
-          if hasContains {
-            HToast.showInfo(NSLocalizedString("已添加过当前设备", comment: ""))
-            return;
-          }
-          let devices = try await HttpRequest.regDevice().devices
-          withAnimation(.easeOut) {
-            store.devices = devices
-          }
-          HToast.showSuccess(NSLocalizedString("已添加当前设备", comment: ""))
-        }
-      }, label: {
+      .navigationBarItems(trailing: Button(action: regDevice, label: {
         Image(systemName: "plus")
           .foregroundColor(Color(UIColor.lightGray))
       }))
     }
     .onAppear {
-      HttpRequest.loadDevices()
+      Task {
+        // 加载已注册设备列表
+        let result = try await HttpRequest.getDevices()
+        AppState.shared.devices = result.devices
+        
+        // 首次提示添加设备
+        let hasAlertRegDevice = UserDefaults.standard.bool(forKey: "PushDeer_hasAlertRegDevice")
+        if !AppState.shared.deviceToken.isEmpty && !hasAlertRegDevice {
+          let hasContains = result.devices.contains { deviceItem in
+            deviceItem.device_id == AppState.shared.deviceToken
+          }
+          if !hasContains {
+            isShowAlert = true
+            UserDefaults.standard.set(true, forKey: "PushDeer_hasAlertRegDevice")
+          }
+        }
+      }
+    }
+    .alert(isPresented: $isShowAlert) {
+      Alert(
+        title: Text("提示"),
+        message: Text("目前还未注册当前设备, 注册后才能收到推送, 是否现在注册? (你还可以稍后点击右上角 + 号添加当前设备)"),
+        primaryButton: .default(
+          Text("注册"),
+          action: regDevice
+        ),
+        secondaryButton: .cancel(Text("稍后"))
+      )
+    }
+  }
+  
+  func regDevice() -> Void {
+    Task {
+      let hasContains = store.devices.contains { store.deviceToken == $0.device_id }
+      if hasContains {
+        HToast.showInfo(NSLocalizedString("已添加过当前设备", comment: ""))
+        return;
+      }
+      let devices = try await HttpRequest.regDevice().devices
+      withAnimation(.easeOut) {
+        store.devices = devices
+      }
+      HToast.showSuccess(NSLocalizedString("已添加当前设备", comment: ""))
     }
   }
 }

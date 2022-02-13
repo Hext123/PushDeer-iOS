@@ -82,7 +82,12 @@ struct TestPushView: View {
       )
       Task {
         if store.keys.isEmpty {
+          // 查keys列表
           store.keys = try await HttpRequest.getKeys().keys
+        }
+        if store.keys.isEmpty {
+          // 没查到就自动生成一个key
+          store.keys = try await HttpRequest.genKey().keys
         }
         if let keyItem = store.keys.first {
           do {

@@ -38,21 +38,33 @@ struct KeyListView: View {
           Spacer(minLength: 30)
         }
       }
-      .navigationBarItems(trailing: Button(action: {
-        Task {
-          let keys = try await HttpRequest.genKey().keys
-          withAnimation(.easeOut) {
-            store.keys = keys
-          }
-          HToast.showSuccess(NSLocalizedString("已添加新Key", comment: ""))
-        }
-      }, label: {
+      .navigationBarItems(trailing: Button(action: genKey, label: {
         Image(systemName: "plus")
           .foregroundColor(Color(UIColor.lightGray))
       }))
     }
     .onAppear {
-      HttpRequest.loadKeys()
+      Task {
+        let result = try await HttpRequest.getKeys()
+        AppState.shared.keys = result.keys
+        
+        // 首次自动生成一个 key
+        let hasAlertGenKey = UserDefaults.standard.bool(forKey: "PushDeer_hasAlertGenKey")
+        if result.keys.isEmpty && !hasAlertGenKey {
+          genKey()
+          UserDefaults.standard.set(true, forKey: "PushDeer_hasAlertGenKey")
+        }
+      }
+    }
+  }
+  
+  func genKey() -> Void {
+    Task {
+      let keys = try await HttpRequest.genKey().keys
+      withAnimation(.easeOut) {
+        store.keys = keys
+      }
+      HToast.showSuccess(NSLocalizedString("已添加新Key", comment: ""))
     }
   }
 }
