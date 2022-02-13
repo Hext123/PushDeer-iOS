@@ -22,6 +22,8 @@ struct DeviceListView: View {
               store.devices.removeAll { _deviceItem in
                 _deviceItem.id == deviceItem.id
               }
+              // 尝试触发 @Published, 看能不能解决 UI 偶尔不更新的问题
+              store.devices = store.devices
               HToast.showSuccess(NSLocalizedString("已删除", comment: "删除设备/Key/消息时提示"))
               Task {
                 do {
@@ -33,6 +35,13 @@ struct DeviceListView: View {
             })
               .padding(EdgeInsets(top: 18, leading: 26, bottom: 0, trailing: 24))
           }
+          
+          if store.devices.isEmpty {
+            Text("你还未注册当前设备, 注册后才能收到推送, 你可以点击右上角 \(Image(systemName: "plus")) 添加当前设备")
+              .foregroundColor(Color(UIColor.lightGray))
+              .padding()
+          }
+          
           Spacer(minLength: 30)
         }
       }
@@ -63,7 +72,7 @@ struct DeviceListView: View {
     .alert(isPresented: $isShowAlert) {
       Alert(
         title: Text("提示"),
-        message: Text("目前还未注册当前设备, 注册后才能收到推送, 是否现在注册? (你还可以稍后点击右上角 + 号添加当前设备)"),
+        message: Text("你还未注册当前设备, 注册后才能收到推送, 是否现在注册? (你还可以稍后点击右上角 + 号添加当前设备)"),
         primaryButton: .default(
           Text("注册"),
           action: regDevice

@@ -24,6 +24,8 @@ struct KeyListView: View {
               store.keys.removeAll { _keyItem in
                 keyItem.id == _keyItem.id
               }
+              // 尝试触发 @Published, 看能不能解决 UI 偶尔不更新的问题
+              store.keys = store.keys
               HToast.showSuccess(NSLocalizedString("已删除", comment: "删除设备/Key/消息时提示"))
               Task {
                 do {
@@ -35,6 +37,13 @@ struct KeyListView: View {
             })
               .padding(EdgeInsets(top: 18, leading: 26, bottom: 0, trailing: 24))
           }
+          
+          if store.keys.isEmpty {
+            Text("你还未添加过 Key, 发送推送需要使用 Key, 你可以点击右上角 \(Image(systemName: "plus")) 生成一个 Key")
+              .foregroundColor(Color(UIColor.lightGray))
+              .padding()
+          }
+          
           Spacer(minLength: 30)
         }
       }
