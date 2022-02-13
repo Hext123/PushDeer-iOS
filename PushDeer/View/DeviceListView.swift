@@ -71,8 +71,8 @@ struct DeviceListView: View {
     }
     .alert(isPresented: $isShowAlert) {
       Alert(
-        title: Text("提示"),
-        message: Text("你还未注册当前设备, 注册后才能收到推送, 是否现在注册? (你还可以稍后点击右上角 + 号添加当前设备)"),
+        title: Text("温馨提示"),
+        message: Text("你还未注册当前设备, 注册后才能收到推送, 是否现在注册? (你还可以稍后点击右上角 + 符号添加当前设备)"),
         primaryButton: .default(
           Text("注册"),
           action: regDevice
