@@ -9,7 +9,7 @@ import UIKit
 import UserNotifications
 import IQKeyboardManagerSwift
 
-class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, WXApiDelegate {
     
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     
@@ -35,7 +35,20 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     IQKeyboardManager.shared.enable = false // 键盘与输入框的距离管理 禁用
     IQKeyboardManager.shared.enableAutoToolbar = true // 键盘上方添加的工具栏 启用
     
+    // 向微信注册
+    WXApi.registerApp(Env.wxAppid, universalLink: Env.wxUniversalLink)
+    
     return true
+  }
+  
+  func onReq(_ req: BaseReq) {
+    print(#function, req.type, req.openID)
+  }
+  func onResp(_ resp: BaseResp) {
+    print(#function, resp.type, resp.errCode, resp.errStr)
+    if let resp = resp as? SendAuthResp {
+      print(resp.code, resp.state, resp.lang, resp.country)
+    }
   }
   
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

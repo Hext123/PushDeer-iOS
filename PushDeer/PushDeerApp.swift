@@ -16,6 +16,14 @@ struct PushDeerApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
+        .onOpenURL(perform: { url in
+          print(#function, url)
+          WXApi.handleOpen(url, delegate: appDelegate)
+        })
+        .onContinueUserActivity(NSUserActivityTypeBrowsingWeb, perform: { userActivity in
+          print(#function, userActivity.webpageURL as Any)
+          WXApi.handleOpenUniversalLink(userActivity, delegate: appDelegate)
+        })
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
           // 后台进入前台后, 清空未读消息角标
           UIApplication.shared.applicationIconBadgeNumber = 0

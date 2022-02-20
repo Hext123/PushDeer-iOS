@@ -10,8 +10,9 @@ def commonPods
   pod 'SDWebImageSwiftUI', '~> 2.0.2'
   pod 'KRProgressHUD', '~> 3.4.7'
   pod 'IQKeyboardManagerSwift', '~> 6.5.9'
+  pod 'WechatOpenSDK', '~> 1.8.7.1'
   
-#  pod 'WoodPeckeriOS', :configurations => ['Debug']
+  pod 'WoodPeckeriOS', :configurations => ['Debug']
 end
 
 target 'PushDeer' do

@@ -49,6 +49,19 @@ struct LoginView: View {
           .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color.white))
           .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
           .padding()
+        
+        Button("微信登录") {
+          let req = SendAuthReq()
+          req.scope = "snsapi_userinfo";
+          req.state = "login";
+          WXApi.send(req) { b in
+            print("WXApi.send:", b)
+          }
+        }
+        .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
+        .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color.green))
+        .padding()
+        
       }
       Spacer()
     }
