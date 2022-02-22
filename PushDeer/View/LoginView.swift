@@ -50,16 +50,20 @@ struct LoginView: View {
           .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
           .padding()
         
-        Button("微信登录") {
+        Button {
           let req = SendAuthReq()
           req.scope = "snsapi_userinfo";
           req.state = "login";
           WXApi.send(req) { b in
             print("WXApi.send:", b)
           }
+        } label: {
+          Image("weixin-login")
+            .resizable()
+            .scaledToFill()
         }
         .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
-        .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color.green))
+        .cornerRadius(6)
         .padding()
         
       }
