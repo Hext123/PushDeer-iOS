@@ -59,6 +59,7 @@ struct LoginView: View {
           WXApi.send(req) { b in
             print("WXApi.send:", b)
           }
+          // 微信登录请求发出去后面的逻辑在 AppDelegate 的 onResp 回调方法中处理
         } label: {
           HStack {
             Image("weixin-login")

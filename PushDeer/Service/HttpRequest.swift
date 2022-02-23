@@ -20,6 +20,7 @@ struct HttpRequest {
         switch result {
         case let .success(response):
           do {
+            print((try? response.mapJSON()) ?? "返回值解析失败")
             let result = try JSONDecoder().decode(ApiResult<T>.self, from: response.data)
             print(result)
             if let content = result.content, result.code == 0 {
@@ -48,6 +49,14 @@ struct HttpRequest {
   
   static func login(idToken: String) async throws -> TokenContent {
     return try await request(.login(idToken: idToken), resultType: TokenContent.self)
+  }
+  
+  static func wechatLogin(code: String) async throws -> TokenContent {
+    return try await request(.wechatLogin(code: code), resultType: TokenContent.self)
+  }
+  
+  static func mergeUser(type: String, tokenorcode: String) async throws -> ActionContent {
+    return try await request(.mergeUser(token: AppState.shared.token, type: type, tokenorcode: tokenorcode), resultType: ActionContent.self)
   }
   
   static func getUserInfo() async throws -> UserInfoContent {

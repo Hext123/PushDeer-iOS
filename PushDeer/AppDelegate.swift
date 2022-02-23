@@ -9,8 +9,9 @@ import UIKit
 import UserNotifications
 import IQKeyboardManagerSwift
 
+@MainActor
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, WXApiDelegate {
-    
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     
     // 注册通知
@@ -46,8 +47,30 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
   }
   func onResp(_ resp: BaseResp) {
     print(#function, resp.type, resp.errCode, resp.errStr)
-    if let resp = resp as? SendAuthResp {
-      print(resp.code, resp.state, resp.lang, resp.country)
+    if let resp = resp as? SendAuthResp { // 是登录授权的响应
+      print(resp.code as Any, resp.state as Any, resp.lang as Any, resp.country as Any)
+      switch resp.errCode {
+      case 0: // 用户同意
+        if let code = resp.code, let state = resp.state, state == "login" { // state 值跟传入的一致
+          Task {
+            do {
+              AppState.shared.token = try await HttpRequest.wechatLogin(code: code).token
+              // 给 AppState 的 token 赋值后, SwiftUI 写的 ContentView 页面会监听到并自动进入主页
+            } catch {
+              HToast.showError(error.localizedDescription)
+            }
+          }
+        }
+        break
+      case -2: // 用户取消
+        HToast.showWarning(NSLocalizedString("你已取消授权", comment: ""))
+        break
+      case -4: // 用户拒绝授权
+        HToast.showError(NSLocalizedString("你已拒绝授权", comment: ""))
+        break
+      default:
+        break
+      }
     }
   }
   
