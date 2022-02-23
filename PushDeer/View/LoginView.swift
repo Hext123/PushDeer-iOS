@@ -31,6 +31,7 @@ struct LoginView: View {
           .scaleEffect(1.5)
           .frame(height: 64)
       } else {
+        // 苹果登录按钮
         AppleSignInButton(
           onRequest: { request in
             request.requestedScopes = [.fullName, .email]
@@ -50,6 +51,7 @@ struct LoginView: View {
           .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
           .padding()
         
+        // 微信登录按钮
         Button {
           let req = SendAuthReq()
           req.scope = "snsapi_userinfo";
@@ -58,14 +60,22 @@ struct LoginView: View {
             print("WXApi.send:", b)
           }
         } label: {
-          Image("weixin-login")
-            .resizable()
-            .scaledToFill()
+          HStack {
+            Image("weixin-login")
+              .resizable()
+              .renderingMode(.template)
+              .scaledToFit()
+              .frame(height:20)
+            Text("通过微信登录")
+          }
+          .font(.system(size: 26, weight: .semibold))
+          .foregroundColor(Color("weixinFgColor"))
+          .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
         }
-        .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
+        .background(Color("weixinBgColor"))
         .cornerRadius(6)
+        .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color("weixinFgColor")))
         .padding()
-        
       }
       Spacer()
     }

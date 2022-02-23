@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "icon48_wx_button.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "微信LOGO_轮廓.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
