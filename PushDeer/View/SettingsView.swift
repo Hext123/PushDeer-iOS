@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 //import StoreKit
 
 /// 设置界面
@@ -20,6 +21,10 @@ struct SettingsView: View {
             store.token = ""
           }
           .padding(EdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20))
+          
+          LoginInfoView()
+            .zIndex(-1)
+            .padding(EdgeInsets(top: -30, leading: 20, bottom: 0, trailing: 20))
           
           if Env.isSelfHosted {
             SettingsItemView(title: NSLocalizedString("API endpoint", comment: ""), button: NSLocalizedString("重置", comment: "")) {
@@ -60,6 +65,118 @@ struct SettingsView: View {
       }
     } else {
       return "--"
+    }
+  }
+}
+
+struct LoginInfoView: View {
+  enum AlertType : Identifiable {
+    var id: Self { self }
+    case apple
+    case wechat
+  }
+  @EnvironmentObject private var store: AppState
+  @State private var alertType: AlertType? = nil
+  var body: some View {
+    CardView {
+      HStack(spacing: 16) {
+        Spacer()
+        Circle()
+          .frame(width: 10, height: 10, alignment: .center)
+          .foregroundColor(store.userInfo?.apple_id?.isEmpty ?? true ? .gray : .green)
+        Button {
+          if store.userInfo?.apple_id?.isEmpty ?? true {
+            alertType = .apple
+          } else {
+            HToast.showText(NSLocalizedString("当前已经绑定苹果账号", comment: ""))
+          }
+        } label: {
+          Image(systemName: "applelogo")
+            .resizable()
+            .scaledToFit()
+            .frame( height: 40, alignment: .center)
+        }
+        Spacer()
+        Circle()
+          .frame(width: 10, height: 10, alignment: .center)
+          .foregroundColor(store.userInfo?.wechat_id?.isEmpty ?? true ? .gray : .green)
+        Button {
+          if store.userInfo?.wechat_id?.isEmpty ?? true {
+            alertType = .wechat
+          } else {
+            HToast.showText(NSLocalizedString("当前已经绑定微信账号", comment: ""))
+          }
+        } label: {
+          Image("weixin-login")
+            .resizable()
+            .renderingMode(.template)
+            .scaledToFit()
+            .frame(height: 37, alignment: .center)
+        }
+        Spacer()
+      }
+      .padding(EdgeInsets(top: 32, leading: 0, bottom: 12, trailing: 0))
+    }
+    .alert(item: $alertType) { alertType in
+      var message = ""
+      switch alertType {
+      case .apple:
+        message = NSLocalizedString("准备绑定苹果账号, 如果你绑定的账号之前已经存在, 则会合并到当前账号. (之前的Key可能会被删除)", comment: "")
+      case .wechat:
+        message = NSLocalizedString("准备绑定微信账号, 如果你绑定的账号之前已经存在, 则会合并到当前账号. (之前的Key可能会被删除)", comment: "")
+      }
+      
+      return Alert(
+        title: Text("温馨提示"),
+        message: Text(message),
+        primaryButton: .default(
+          Text("绑定"),
+          action: {
+//            switch alertType {
+//            case .apple:
+//              let coordinator = AppleSignInCoordinator(
+//                onRequest: { request in
+//                  request.requestedScopes = [.fullName, .email]
+//                },
+//                onCompletion: { result in
+//
+//                  do {
+//                    switch result {
+//                    case let .success(authorization):
+//                      if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+//                        let idToken = String(data:appleIDCredential.identityToken!, encoding: .utf8)
+//                        print(idToken as Any)
+//
+//                        // 请求接口
+//                        let result = try await HttpRequest.mergeUser(type: "apple", tokenorcode: idToken)
+//                        print(result)
+//                        // 登录成功
+//
+//                      }
+//                    case let .failure(error):
+//                      HToast.showError(error.localizedDescription)
+//
+//                    }
+//                  } catch {
+//                    HToast.showError(error.localizedDescription)
+//                  }
+//                }
+//              )
+//
+//              coordinator.performRequests()
+//
+//            case .wechat:
+//              let req = SendAuthReq()
+//              req.scope = "snsapi_userinfo";
+//              req.state = "login";
+//              WXApi.send(req) { b in
+//                print("WXApi.send:", b)
+//              }
+//            }
+          }
+        ),
+        secondaryButton: .cancel(Text("稍后"))
+      )
     }
   }
 }

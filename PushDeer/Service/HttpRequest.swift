@@ -55,6 +55,11 @@ struct HttpRequest {
     return try await request(.wechatLogin(code: code), resultType: TokenContent.self)
   }
   
+  /// 合并用户并将旧用户删除
+  /// | 参数 | 说明 |
+  /// | - | - |
+  /// | type | 字符串，必须为 apple 或者 wechat |
+  /// | tokenorcode | type 为 apple时此字段为 idToken，否则为 微信code |
   static func mergeUser(type: String, tokenorcode: String) async throws -> ActionContent {
     return try await request(.mergeUser(token: AppState.shared.token, type: type, tokenorcode: tokenorcode), resultType: ActionContent.self)
   }
