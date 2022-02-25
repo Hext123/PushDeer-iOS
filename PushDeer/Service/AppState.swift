@@ -97,6 +97,10 @@ class AppState: ObservableObject {
       }
     case let .failure(error):
       print(error)
+      if (error as NSError).code == 1001 {
+        // Apple 登录取消
+        throw NSError(domain: NSLocalizedString("登录失败", comment: "AppleId登录失败时提示") + "\n\(error.localizedDescription)", code: 1001, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("你已取消授权", comment: "")])
+      }
       // Apple 登录失败
       throw NSError(domain: NSLocalizedString("登录失败", comment: "AppleId登录失败时提示") + "\n\(error.localizedDescription)", code: -2, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("登录失败", comment: "AppleId登录失败时提示") + "(-2)\n\(error.localizedDescription)"])
     }

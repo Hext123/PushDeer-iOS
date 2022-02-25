@@ -60,8 +60,8 @@ struct HttpRequest {
   /// | - | - |
   /// | type | 字符串，必须为 apple 或者 wechat |
   /// | tokenorcode | type 为 apple时此字段为 idToken，否则为 微信code |
-  static func mergeUser(type: String, tokenorcode: String) async throws -> ActionContent {
-    return try await request(.mergeUser(token: AppState.shared.token, type: type, tokenorcode: tokenorcode), resultType: ActionContent.self)
+  static func mergeUser(type: String, tokenorcode: String) async throws -> ResultContent {
+    return try await request(.mergeUser(token: AppState.shared.token, type: type, tokenorcode: tokenorcode), resultType: ResultContent.self)
   }
   
   static func getUserInfo() async throws -> UserInfoContent {
@@ -119,8 +119,8 @@ struct HttpRequest {
     }
   }
   
-  static func push(pushkey: String, text: String, desp: String, type: String) async throws -> PushResultContent {
-    return try await request(.push(pushkey: pushkey, text: text, desp: desp, type: type), resultType: PushResultContent.self)
+  static func push(pushkey: String, text: String, desp: String, type: String) async throws -> ResultContent {
+    return try await request(.push(pushkey: pushkey, text: text, desp: desp, type: type), resultType: ResultContent.self)
   }
   
   static func getMessages() async throws -> MessageContent {

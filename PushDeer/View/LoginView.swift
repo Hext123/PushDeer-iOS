@@ -43,6 +43,11 @@ struct LoginView: View {
               // 获取成功去主页
             } catch {
               showLoading = false
+              if (error as NSError).code == 1001 {
+                // 取消登录
+                HToast.showWarning(error.localizedDescription)
+                return
+              }
               HToast.showError(error.localizedDescription)
             }
           }

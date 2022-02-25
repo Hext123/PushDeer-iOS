@@ -51,11 +51,17 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
       print(resp.code as Any, resp.state as Any, resp.lang as Any, resp.country as Any)
       switch resp.errCode {
       case 0: // 用户同意
-        if let code = resp.code, let state = resp.state, state == "login" { // state 值跟传入的一致
+        if let code = resp.code, let state = resp.state {
           Task {
             do {
-              AppState.shared.token = try await HttpRequest.wechatLogin(code: code).token
-              // 给 AppState 的 token 赋值后, SwiftUI 写的 ContentView 页面会监听到并自动进入主页
+              if state == "login" {
+                AppState.shared.token = try await HttpRequest.wechatLogin(code: code).token
+                // 给 AppState 的 token 赋值后, SwiftUI 写的 ContentView 页面会监听到并自动进入主页
+              } else if state == "bind" {
+                _ = try await HttpRequest.mergeUser(type: "wechat", tokenorcode: code)
+                // 合并成功, 更新数据
+                AppState.shared.userInfo = try await HttpRequest.getUserInfo()
+              }
             } catch {
               HToast.showError(error.localizedDescription)
             }

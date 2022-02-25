@@ -77,6 +77,7 @@ struct LoginInfoView: View {
   }
   @EnvironmentObject private var store: AppState
   @State private var alertType: AlertType? = nil
+  static private var coordinator: AppleSignInCoordinator? = nil
   var body: some View {
     CardView {
       HStack(spacing: 16) {
@@ -132,47 +133,48 @@ struct LoginInfoView: View {
         primaryButton: .default(
           Text("绑定"),
           action: {
-//            switch alertType {
-//            case .apple:
-//              let coordinator = AppleSignInCoordinator(
-//                onRequest: { request in
-//                  request.requestedScopes = [.fullName, .email]
-//                },
-//                onCompletion: { result in
-//
-//                  do {
-//                    switch result {
-//                    case let .success(authorization):
-//                      if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-//                        let idToken = String(data:appleIDCredential.identityToken!, encoding: .utf8)
-//                        print(idToken as Any)
-//
-//                        // 请求接口
-//                        let result = try await HttpRequest.mergeUser(type: "apple", tokenorcode: idToken)
-//                        print(result)
-//                        // 登录成功
-//
-//                      }
-//                    case let .failure(error):
-//                      HToast.showError(error.localizedDescription)
-//
-//                    }
-//                  } catch {
-//                    HToast.showError(error.localizedDescription)
-//                  }
-//                }
-//              )
-//
-//              coordinator.performRequests()
-//
-//            case .wechat:
-//              let req = SendAuthReq()
-//              req.scope = "snsapi_userinfo";
-//              req.state = "login";
-//              WXApi.send(req) { b in
-//                print("WXApi.send:", b)
-//              }
-//            }
+            switch alertType {
+            case .apple:
+              LoginInfoView.coordinator = AppleSignInCoordinator(
+                onRequest: { request in
+                  request.requestedScopes = [.fullName, .email]
+                },
+                onCompletion: { result in
+                  do {
+                    switch result {
+                    case let .success(authorization):
+                      if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+                        let idToken = String(data:appleIDCredential.identityToken!, encoding: .utf8)
+                        print(idToken as Any)
+                        // 请求接口
+                        let result = try await HttpRequest.mergeUser(type: "apple", tokenorcode: idToken!)
+                        print(result)
+                        // 合并成功, 更新数据
+                        store.userInfo = try await HttpRequest.getUserInfo()
+                      }
+                    case let .failure(error):
+                      if (error as NSError).code == 1001 {
+                        HToast.showWarning(NSLocalizedString("你已取消授权", comment: ""))
+                      } else {
+                        HToast.showError(error.localizedDescription)
+                      }
+                    }
+                  } catch {
+                    HToast.showError(error.localizedDescription)
+                  }
+                }
+              )
+              LoginInfoView.coordinator?.performRequests()
+              
+            case .wechat:
+              let req = SendAuthReq()
+              req.scope = "snsapi_userinfo";
+              req.state = "bind";
+              WXApi.send(req) { b in
+                print("WXApi.send:", b)
+              }
+              // 微信登录请求发出去后面的逻辑在 AppDelegate 的 onResp 回调方法中处理
+            }
           }
         ),
         secondaryButton: .cancel(Text("稍后"))

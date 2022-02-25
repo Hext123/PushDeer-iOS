@@ -74,7 +74,7 @@ struct ActionContent: Codable{
   let message: String
 }
 
-struct PushResultContent: Codable{
+struct ResultContent: Codable{
   let result: Array<String>
 }
 
