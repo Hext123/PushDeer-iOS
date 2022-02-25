@@ -77,6 +77,8 @@
 		52EB90AE2778AFD60048E0ED /* BaseNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */; };
 		52EB90B02778D67F0048E0ED /* KeyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AF2778D67F0048E0ED /* KeyItemView.swift */; };
 		52EB90B32778DA4E0048E0ED /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90B22778DA4E0048E0ED /* Line.swift */; };
+		52EED71E27C9394D0086A804 /* WXDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EED71D27C9394D0086A804 /* WXDelegate.swift */; };
+		52EED71F27C93B960086A804 /* WXDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EED71D27C9394D0086A804 /* WXDelegate.swift */; };
 		52F0243F277737470071D861 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0243E277737470071D861 /* LoginView.swift */; };
 		52F2C223277961D7006F08DC /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2C222277961D7006F08DC /* SettingsItemView.swift */; };
 		52F40D2F277CA05600766C24 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F40D2E277CA05600766C24 /* MessageItemView.swift */; };
@@ -154,6 +156,7 @@
 		52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationView.swift; sourceTree = "<group>"; };
 		52EB90AF2778D67F0048E0ED /* KeyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyItemView.swift; sourceTree = "<group>"; };
 		52EB90B22778DA4E0048E0ED /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		52EED71D27C9394D0086A804 /* WXDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXDelegate.swift; sourceTree = "<group>"; };
 		52F0243C277733CE0071D861 /* PushDeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushDeer.entitlements; sourceTree = "<group>"; };
 		52F0243E277737470071D861 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		52F2C222277961D7006F08DC /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
@@ -214,6 +217,7 @@
 				52450F3A278491F8003652D8 /* AppState.swift */,
 				52450F412784943F003652D8 /* HttpRequest.swift */,
 				526A1E722791E03900BA2177 /* Persistence.swift */,
+				52EED71D27C9394D0086A804 /* WXDelegate.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -575,6 +579,7 @@
 				526A1E7D2792B2A600BA2177 /* MessageModel.swift in Sources */,
 				52483FC2277ED6D5003A100E /* AppDelegate.swift in Sources */,
 				52450F3827848243003652D8 /* PushDeerApi.swift in Sources */,
+				52EED71E27C9394D0086A804 /* WXDelegate.swift in Sources */,
 				52EB90AE2778AFD60048E0ED /* BaseNavigationView.swift in Sources */,
 				524E99E627B3CD0F00292396 /* EndpointView.swift in Sources */,
 				52EB90AC2778ADF80048E0ED /* CardView.swift in Sources */,
@@ -613,6 +618,7 @@
 				526A1E7E2792B2A600BA2177 /* MessageModel.swift in Sources */,
 				52483FC3277ED6D5003A100E /* AppDelegate.swift in Sources */,
 				52450F3927848243003652D8 /* PushDeerApi.swift in Sources */,
+				52EED71F27C93B960086A804 /* WXDelegate.swift in Sources */,
 				52B8CF86277E0C12004CB680 /* BaseNavigationView.swift in Sources */,
 				524E99E727B3CD0F00292396 /* EndpointView.swift in Sources */,
 				52FBA09427874879003308C2 /* ContentView.swift in Sources */,

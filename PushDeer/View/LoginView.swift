@@ -56,6 +56,7 @@ struct LoginView: View {
           .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
           .padding()
         
+#if !targetEnvironment(macCatalyst) && !APPCLIP && !SELFHOSTED
         // 微信登录按钮
         Button {
           let req = SendAuthReq()
@@ -82,6 +83,7 @@ struct LoginView: View {
         .cornerRadius(6)
         .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color("weixinFgColor")))
         .padding()
+#endif
       }
       Spacer()
     }
