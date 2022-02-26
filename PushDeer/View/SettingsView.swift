@@ -23,9 +23,11 @@ struct SettingsView: View {
           .padding(EdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20))
           
 #if !targetEnvironment(macCatalyst) && !APPCLIP && !SELFHOSTED
-          LoginInfoView()
-            .zIndex(-1)
-            .padding(EdgeInsets(top: -30, leading: 20, bottom: 0, trailing: 20))
+          if WXApi.isWXAppInstalled() {
+            LoginInfoView()
+              .zIndex(-1)
+              .padding(EdgeInsets(top: -30, leading: 20, bottom: 0, trailing: 20))
+          }
 #endif
           
           if Env.isSelfHosted {

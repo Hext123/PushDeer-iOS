@@ -57,32 +57,34 @@ struct LoginView: View {
           .padding()
         
 #if !targetEnvironment(macCatalyst) && !APPCLIP && !SELFHOSTED
-        // 微信登录按钮
-        Button {
-          let req = SendAuthReq()
-          req.scope = "snsapi_userinfo";
-          req.state = "login";
-          WXApi.send(req) { b in
-            print("WXApi.send:", b)
+        if WXApi.isWXAppInstalled() {
+          // 微信登录按钮
+          Button {
+            let req = SendAuthReq()
+            req.scope = "snsapi_userinfo";
+            req.state = "login";
+            WXApi.send(req) { b in
+              print("WXApi.send:", b)
+            }
+            // 微信登录请求发出去后面的逻辑在 AppDelegate 的 onResp 回调方法中处理
+          } label: {
+            HStack {
+              Image("weixin-login")
+                .resizable()
+                .renderingMode(.template)
+                .scaledToFit()
+                .frame(height:20)
+              Text("通过微信登录")
+            }
+            .font(.system(size: 26, weight: .semibold))
+            .foregroundColor(Color("weixinFgColor"))
+            .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
           }
-          // 微信登录请求发出去后面的逻辑在 AppDelegate 的 onResp 回调方法中处理
-        } label: {
-          HStack {
-            Image("weixin-login")
-              .resizable()
-              .renderingMode(.template)
-              .scaledToFit()
-              .frame(height:20)
-            Text("通过微信登录")
-          }
-          .font(.system(size: 26, weight: .semibold))
-          .foregroundColor(Color("weixinFgColor"))
-          .frame(maxWidth: 375, minHeight: 64, maxHeight: 64)
+          .background(Color("weixinBgColor"))
+          .cornerRadius(6)
+          .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color("weixinFgColor")))
+          .padding()
         }
-        .background(Color("weixinBgColor"))
-        .cornerRadius(6)
-        .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color("weixinFgColor")))
-        .padding()
 #endif
       }
       Spacer()
