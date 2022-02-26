@@ -82,6 +82,8 @@
 		52F0243F277737470071D861 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F0243E277737470071D861 /* LoginView.swift */; };
 		52F2C223277961D7006F08DC /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2C222277961D7006F08DC /* SettingsItemView.swift */; };
 		52F40D2F277CA05600766C24 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F40D2E277CA05600766C24 /* MessageItemView.swift */; };
+		52FB1FEC27CA9D7300367DE0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB1FEB27CA9D7300367DE0 /* SafariView.swift */; };
+		52FB1FED27CA9D7300367DE0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB1FEB27CA9D7300367DE0 /* SafariView.swift */; };
 		52FBA09427874879003308C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5292F4FA2776BC7900B9A7BB /* ContentView.swift */; };
 		64B0C15E70CCC382B480F76E /* Pods_PushDeer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E380A18349DE4D26071E913E /* Pods_PushDeer.framework */; };
 /* End PBXBuildFile section */
@@ -161,6 +163,7 @@
 		52F0243E277737470071D861 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		52F2C222277961D7006F08DC /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
 		52F40D2E277CA05600766C24 /* MessageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemView.swift; sourceTree = "<group>"; };
+		52FB1FEB27CA9D7300367DE0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		69F56B2711ED98819D474BE3 /* Pods-PushDeerClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushDeerClip.debug.xcconfig"; path = "Target Support Files/Pods-PushDeerClip/Pods-PushDeerClip.debug.xcconfig"; sourceTree = "<group>"; };
 		8B9D658D778AE868A0E052A8 /* Pods-PushDeer.debug-selfhosted.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushDeer.debug-selfhosted.xcconfig"; path = "Target Support Files/Pods-PushDeer/Pods-PushDeer.debug-selfhosted.xcconfig"; sourceTree = "<group>"; };
 		9CC775BE0326BF31C6FACF06 /* Pods-PushDeerClip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushDeerClip.release.xcconfig"; path = "Target Support Files/Pods-PushDeerClip/Pods-PushDeerClip.release.xcconfig"; sourceTree = "<group>"; };
@@ -291,6 +294,7 @@
 				52B8CF5E277DE660004CB680 /* AppleSignInButton.swift */,
 				52AC5C2727B7FE1D00EEB185 /* ViewExtension.swift */,
 				52AC5C2A27B8206D00EEB185 /* ListTest.swift */,
+				52FB1FEB27CA9D7300367DE0 /* SafariView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -559,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F0243F277737470071D861 /* LoginView.swift in Sources */,
+				52FB1FEC27CA9D7300367DE0 /* SafariView.swift in Sources */,
 				523150DC2778762B00941EDC /* DeviceItemView.swift in Sources */,
 				523150D9277875FB00941EDC /* DeletableView.swift in Sources */,
 				52163EBB277741AC00594190 /* SettingsView.swift in Sources */,
@@ -598,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B8CF82277E0C06004CB680 /* AppleSignInButton.swift in Sources */,
+				52FB1FED27CA9D7300367DE0 /* SafariView.swift in Sources */,
 				52B8CF78277E0BF1004CB680 /* MainView.swift in Sources */,
 				52B8CF79277E0BFB004CB680 /* DeviceListView.swift in Sources */,
 				52B8CF84277E0C12004CB680 /* CardView.swift in Sources */,
@@ -1292,8 +1298,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.5.2;
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

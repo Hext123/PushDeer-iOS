@@ -20,6 +20,11 @@ struct HttpRequest {
         switch result {
         case let .success(response):
           do {
+            print(response)
+            if response.statusCode != 200 {
+              continuation.resume(throwing: NSError(domain: NSLocalizedString("接口报错", comment: "接口报错时提示"), code: response.statusCode, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("接口报错", comment: "接口报错时提示") + "(\(response.statusCode)"]))
+              return
+            }
             print((try? response.mapJSON()) ?? "返回值解析失败")
             let result = try JSONDecoder().decode(ApiResult<T>.self, from: response.data)
             print(result)
