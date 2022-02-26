@@ -44,6 +44,22 @@ struct SettingsView: View {
           }
           .padding(EdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20))
           
+#if !targetEnvironment(macCatalyst)
+          CardView {
+            HStack{
+              Toggle(isOn: $store.isUseBuiltInBrowser) {
+                Text("使用内置浏览器打开链接")
+                  .font(.system(size: 18))
+                  .foregroundColor(Color("textColor"))
+              }
+              .padding(16)
+              .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+            }
+            .frame(height: 74)
+          }
+          .padding(EdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20))
+#endif
+          
           Spacer()
         }
       }

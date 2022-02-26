@@ -50,6 +50,7 @@ extension URL: Identifiable {
 
 struct MessageContentView: View {
   let messageItem: MessageModel
+  @EnvironmentObject private var store: AppState
   @State private var image: PlatformImage? = nil
   @State private var showUrl: URL?
   
@@ -67,7 +68,11 @@ struct MessageContentView: View {
             )
 #if !targetEnvironment(macCatalyst)
             .onOpenMarkdownLink { url in
-              showUrl = url
+              if store.isUseBuiltInBrowser {
+                showUrl = url
+              } else {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+              }
             }
 #endif
           if !(messageItem.desp?.isEmpty ?? true) {
@@ -80,7 +85,11 @@ struct MessageContentView: View {
               )
 #if !targetEnvironment(macCatalyst)
               .onOpenMarkdownLink { url in
-                showUrl = url
+                if store.isUseBuiltInBrowser {
+                  showUrl = url
+                } else {
+                  UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
               }
 #endif
           }
