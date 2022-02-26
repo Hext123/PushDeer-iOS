@@ -759,7 +759,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PushDeer/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PushDeer;
+				INFOPLIST_KEY_CFBundleDisplayName = "PushDeer·自架版";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "APP需要访问本地网络以供调试(仅在开发时)";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "APP为您提供保存图片到相册的功能";
@@ -803,7 +803,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PushDeerClip/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PushDeer;
+				INFOPLIST_KEY_CFBundleDisplayName = "PushDeer·自架版";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "APP需要访问本地网络以供调试(仅在开发时)";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "APP为您提供保存图片到相册的功能";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -902,7 +902,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PushDeer/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PushDeer;
+				INFOPLIST_KEY_CFBundleDisplayName = "PushDeer·自架版";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "APP需要访问本地网络以供调试(仅在开发时)";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "APP为您提供保存图片到相册的功能";
@@ -945,7 +945,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PushDeerClip/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PushDeer;
+				INFOPLIST_KEY_CFBundleDisplayName = "PushDeer·自架版";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "APP需要访问本地网络以供调试(仅在开发时)";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "APP为您提供保存图片到相册的功能";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
