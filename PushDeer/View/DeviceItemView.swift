@@ -48,7 +48,7 @@ struct DeviceItemView: View {
         }
         Text(getInfo(deviceItem: deviceItem))
           .font(.system(size: 20))
-        Spacer()
+        Spacer(minLength: 12)
       }
       .frame(height: 80)
     }
