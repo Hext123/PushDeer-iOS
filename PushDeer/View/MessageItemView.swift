@@ -53,6 +53,7 @@ struct MessageContentView: View {
   @EnvironmentObject private var store: AppState
   @State private var image: PlatformImage? = nil
   @State private var showUrl: URL?
+  @State private var showActionSheet = false
   
   var body: some View {
     switch messageItem.type {
@@ -95,6 +96,7 @@ struct MessageContentView: View {
           }
         }
         .padding()
+#if targetEnvironment(macCatalyst)
         .contextMenu {
           Button {
             UIPasteboard.general.string = (messageItem.text ?? "") + "\n" + (messageItem.desp ?? "")
@@ -103,6 +105,22 @@ struct MessageContentView: View {
             Label("复制",systemImage: "doc.on.doc")
           }
         }
+#endif
+#if !targetEnvironment(macCatalyst)
+        .onLongPressGesture {
+          UIImpactFeedbackGenerator().impactOccurred()
+          showActionSheet = true
+        }
+        .actionSheet(isPresented: $showActionSheet) {
+          ActionSheet(title: Text("复制消息内容"), message: nil, buttons: [
+            .default(Text("复制"), action: {
+              UIPasteboard.general.string = (messageItem.text ?? "") + "\n" + (messageItem.desp ?? "")
+              HToast.showSuccess(NSLocalizedString("已复制", comment: ""))
+            }),
+            .cancel()
+          ])
+        }
+#endif
       }
       .fullScreenCover(item: $showUrl) {
         
