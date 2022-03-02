@@ -1303,7 +1303,7 @@
 			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
