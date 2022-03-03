@@ -12,7 +12,8 @@ class AppState: ObservableObject {
   /// 账号 token
   @Published var token : String {
     didSet {
-      UserDefaults.standard.set(token, forKey: "PushDeer_token")
+//      UserDefaults.standard.set(token, forKey: "PushDeer_token")
+      UserDefaults(suiteName: Env.appGroupId)?.set(token, forKey: "PushDeer_token")
     }
   }
   /// 设备列表
@@ -47,7 +48,8 @@ class AppState: ObservableObject {
   /// API endpoint
   @Published var api_endpoint : String {
     didSet {
-      UserDefaults.standard.set(api_endpoint, forKey: "PushDeer_api_endpoint")
+//      UserDefaults.standard.set(api_endpoint, forKey: "PushDeer_api_endpoint")
+      UserDefaults(suiteName: Env.appGroupId)?.set(api_endpoint, forKey: "PushDeer_api_endpoint")
     }
   }
   
@@ -62,11 +64,13 @@ class AppState: ObservableObject {
   
   static let shared = AppState()
   private init() {
-    let _token = UserDefaults.standard.string(forKey: "PushDeer_token")
+//    let _token = UserDefaults.standard.string(forKey: "PushDeer_token")
+    let _token = UserDefaults(suiteName: Env.appGroupId)?.string(forKey: "PushDeer_token")
     let _tabSelectedIndex = UserDefaults.standard.integer(forKey: "PushDeer_tabSelectedIndex")
     let _isShowTestPush = UserDefaults.standard.object(forKey: "PushDeer_isShowTestPush")
     let _isUseBuiltInBrowser = UserDefaults.standard.object(forKey: "PushDeer_isUseBuiltInBrowser")
-    let _api_endpoint = UserDefaults.standard.string(forKey: "PushDeer_api_endpoint")
+//    let _api_endpoint = UserDefaults.standard.string(forKey: "PushDeer_api_endpoint")
+    let _api_endpoint = UserDefaults(suiteName: Env.appGroupId)?.string(forKey: "PushDeer_api_endpoint")
     token = _token ?? ""
     tabSelectedIndex = _tabSelectedIndex
     isShowTestPush = _isShowTestPush as? Bool ?? true
