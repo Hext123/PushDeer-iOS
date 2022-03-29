@@ -55,12 +55,17 @@ struct MessageContentView: View {
   @State private var showUrl: URL?
   @State private var showActionSheet = false
   
+  func getMarkDownBaseURL() -> URL? {
+    let urlStr = store.markDownBaseURL ?? "https://example.com/"
+    return URL(string: urlStr)
+  }
+  
   var body: some View {
     switch messageItem.type {
     case "markdown":
       CardView {
         VStack(alignment: .leading, spacing: 5) {
-          Markdown(messageItem.text ?? "")
+          Markdown(messageItem.text ?? "", baseURL: getMarkDownBaseURL())
             .markdownStyle(
               MarkdownStyle(
                 font: .system(size: 14),
@@ -77,7 +82,7 @@ struct MessageContentView: View {
             }
 #endif
           if !(messageItem.desp?.isEmpty ?? true) {
-            Markdown(messageItem.desp ?? "")
+            Markdown(messageItem.desp ?? "", baseURL: getMarkDownBaseURL())
               .markdownStyle(
                 MarkdownStyle(
                   font: .system(size: 14),
