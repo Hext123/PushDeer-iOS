@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AuthenticationServices
+import BetterSafariView
 //import StoreKit
 
 /// 设置界面
@@ -112,11 +113,14 @@ struct SettingsView: View {
         store.userInfo = try await HttpRequest.getUserInfo()
       }
     }
-    .fullScreenCover(item: $showUrl) {
-      
-    } content: { url in
+    .safariView(item: $showUrl, content: { url in
       SafariView(url: url)
-    }    
+    })
+//    .fullScreenCover(item: $showUrl) {
+//
+//    } content: { url in
+//      HSafariView(url: url)
+//    }
   }
   
   func userName() -> String {

@@ -9,6 +9,7 @@ import SwiftUI
 import MarkdownUI
 import SDWebImageSwiftUI
 import Photos
+import BetterSafariView
 
 struct MessageItemView: View {
   let messageItem: MessageModel
@@ -44,9 +45,9 @@ struct MessageItemView: View {
   }
 }
 
-extension URL: Identifiable {
-  public var id: Self { self }
-}
+//extension URL: Identifiable {
+//  public var id: Self { self }
+//}
 
 struct MessageContentView: View {
   let messageItem: MessageModel
@@ -127,11 +128,14 @@ struct MessageContentView: View {
 //        }
 //#endif
       }
-      .fullScreenCover(item: $showUrl) {
-        
-      } content: { url in
+      .safariView(item: $showUrl, content: { url in
         SafariView(url: url)
-      }
+      })
+//      .fullScreenCover(item: $showUrl) {
+//
+//      } content: { url in
+//        HSafariView(url: url)
+//      }
       
     case "image":
       WebImage(url: URL(string: messageItem.text ?? ""))
