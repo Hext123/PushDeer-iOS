@@ -36,7 +36,7 @@ struct MessageItemView: View {
       }
       
       DeletableView(contentView: {
-        MessageContentView(messageItem: messageItem)
+        MessageContentView(messageItem: messageItem, deleteAction: deleteAction)
       }, deleteAction: deleteAction)
         .padding(messageItem.type == "image" ? EdgeInsets.init() : EdgeInsets(top: 10, leading: 26, bottom: 0, trailing: 24))
       
@@ -51,6 +51,8 @@ struct MessageItemView: View {
 
 struct MessageContentView: View {
   let messageItem: MessageModel
+  /// 删除按钮点击的回调
+  let deleteAction : () -> ()
   @EnvironmentObject private var store: AppState
   @State private var image: PlatformImage? = nil
   @State private var showUrl: URL?
@@ -110,6 +112,12 @@ struct MessageContentView: View {
           } label: {
             Label("复制",systemImage: "doc.on.doc")
           }
+#if targetEnvironment(macCatalyst)
+          Divider()
+          Button(action: deleteAction) {
+            Label("删除",systemImage: "trash.slash")
+          }
+#endif
         }
 //#endif
 //#if !targetEnvironment(macCatalyst)
@@ -190,6 +198,12 @@ struct MessageContentView: View {
           } label: {
             Label("保存图片",systemImage: "square.and.arrow.down")
           }
+#if targetEnvironment(macCatalyst)
+          Divider()
+          Button(action: deleteAction) {
+            Label("删除",systemImage: "trash.slash")
+          }
+#endif
         }
       
     default:
@@ -215,6 +229,12 @@ struct MessageContentView: View {
           } label: {
             Label("复制",systemImage: "doc.on.doc")
           }
+#if targetEnvironment(macCatalyst)
+          Divider()
+          Button(action: deleteAction) {
+            Label("删除",systemImage: "trash.slash")
+          }
+#endif
         }
       }
     }
