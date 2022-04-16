@@ -26,8 +26,7 @@ struct Provider: IntentTimelineProvider {
       let entryDate = Calendar.current.date(byAdding: .minute, value: 1, to: currentDate)!
       var entries: [SimpleEntry] = []
       var entry = SimpleEntry(date: entryDate, configuration: configuration)
-      AppState.shared.token = UserDefaults(suiteName: Env.appGroupId)?.string(forKey: "PushDeer_token") ?? ""
-      AppState.shared.api_endpoint = UserDefaults(suiteName: Env.appGroupId)?.string(forKey: "PushDeer_api_endpoint") ?? ""
+      AppState.shared.reloadUserDefaults()
       print("token", AppState.shared.token)
       do {
         let messages = try await HttpRequest.getMessages().messages
@@ -93,6 +92,7 @@ struct PushDeerWidgetEntryView : View {
       }
       .padding(.top, 5)
       .padding()
+      .accentColor(Color("AccentColor"))
     }
   }
 }
@@ -131,5 +131,6 @@ let placeholderList = [
   MessageItem(id: 2, uid: "", text: "第二条消息, 哈哈", desp: "", type: "text", pushkey_name: "", created_at: ""),
   MessageItem(id: 3, uid: "", text: "第三条消息, 我来了", desp: "", type: "text", pushkey_name: "", created_at: ""),
   MessageItem(id: 4, uid: "", text: "第四条消息, 我又走了", desp: "", type: "text", pushkey_name: "", created_at: ""),
-  MessageItem(id: 5, uid: "", text: "第五条消息, 我很长很长很长很长很长很长很长很长很长很长很长", desp: "", type: "text", pushkey_name: "", created_at: "")
+  MessageItem(id: 5, uid: "", text: "第五条消息, 我很长很长很长很长很长很长很长很长很长很长很长", desp: "", type: "text", pushkey_name: "", created_at: ""),
+  MessageItem(id: -1, uid: "", text: "+其它\(8)条", desp: "", type: "text", pushkey_name: "", created_at: ""),
 ]
