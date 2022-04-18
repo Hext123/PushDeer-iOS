@@ -70,29 +70,71 @@ struct PushDeerWidgetEntryView : View {
   var entry: Provider.Entry
   
   var body: some View {
-    if AppState.shared.token.isEmpty {
-      Text("未登录")
-    } else if entry.messages.isEmpty {
-      Text("无消息")
-    } else {
-      VStack(alignment: .leading, spacing: 5) {
-        ForEach(entry.messages) {
-          if entry.messages.first?.id != $0.id {
-            Divider()
+    HContentView {
+      if AppState.shared.token.isEmpty {
+        Text("未登录")
+      } else if entry.messages.isEmpty {
+        Text("无消息")
+      } else {
+        VStack(alignment: .leading, spacing: 5) {
+          ForEach(entry.messages) {
+            if entry.messages.first?.id != $0.id {
+              Divider()
+            }
+            if $0.id == -1 {
+              HText(text: $0.text)
+                .foregroundColor(.accentColor)
+            } else {
+              HText(text: $0.text)
+            }
           }
-          if $0.id == -1 {
-            Text(try! AttributedString(markdown: $0.text))
-              .foregroundColor(.accentColor)
-          } else {
-            Text(try! AttributedString(markdown: $0.text))
-          }
+          .font(.system(size: 15))
+          Spacer(minLength: 0)
         }
-        .font(.system(size: 15))
-        Spacer(minLength: 0)
+        .padding(.top, 5)
+        .padding()
+        .accentColor(Color("AccentColor"))
       }
-      .padding(.top, 5)
-      .padding()
-      .accentColor(Color("AccentColor"))
+    }
+  }
+}
+
+struct HContentView<Content : View>: View {
+  /// 页面主体View
+  @ViewBuilder let contentView: Content
+  
+  @Environment(\.colorScheme) private var colorScheme
+  
+  var body: some View {
+    ZStack {
+      // VStack HStack Spacer 组合起来撑到最大
+      VStack {
+        HStack {
+          Spacer()
+        }
+        Spacer()
+      }
+      contentView
+    }
+    .background(
+      Image("deer.gray")
+        .opacity(colorScheme == .dark ? 0.4 : 1),
+      alignment: .topTrailing
+    )
+  }
+}
+
+struct HText: View {
+  let text: String
+  var body: some View {
+    if #available(iOSApplicationExtension 15.0, *) {
+      Group {
+        if #available(iOSApplicationExtension 15.0, *) {
+          Text(try! AttributedString(markdown: text))
+        }
+      }
+    } else {
+      Text(verbatim: text)
     }
   }
 }
@@ -120,8 +162,10 @@ struct PushDeerWidget_Previews: PreviewProvider {
         .previewContext(WidgetPreviewContext(family: .systemMedium))
       PushDeerWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
         .previewContext(WidgetPreviewContext(family: .systemLarge))
-      PushDeerWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-        .previewContext(WidgetPreviewContext(family: .systemExtraLarge))
+      if #available(iOSApplicationExtension 15.0, *) {
+        PushDeerWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+          .previewContext(WidgetPreviewContext(family: .systemExtraLarge))
+      }
     }
   }
 }
@@ -130,7 +174,6 @@ let placeholderList = [
   MessageItem(id: 1, uid: "", text: "第一条消息, 嘿", desp: "", type: "text", pushkey_name: "", created_at: ""),
   MessageItem(id: 2, uid: "", text: "第二条消息, 哈哈", desp: "", type: "text", pushkey_name: "", created_at: ""),
   MessageItem(id: 3, uid: "", text: "第三条消息, 我来了", desp: "", type: "text", pushkey_name: "", created_at: ""),
-  MessageItem(id: 4, uid: "", text: "第四条消息, 我又走了", desp: "", type: "text", pushkey_name: "", created_at: ""),
-  MessageItem(id: 5, uid: "", text: "第五条消息, 我很长很长很长很长很长很长很长很长很长很长很长", desp: "", type: "text", pushkey_name: "", created_at: ""),
+  MessageItem(id: 4, uid: "", text: "第四条消息, 我很长很长很长很长很长很长很长很长很长很长很长", desp: "", type: "text", pushkey_name: "", created_at: ""),
   MessageItem(id: -1, uid: "", text: "+其它\(8)条", desp: "", type: "text", pushkey_name: "", created_at: ""),
 ]
