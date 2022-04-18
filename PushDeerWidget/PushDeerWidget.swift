@@ -147,8 +147,8 @@ struct PushDeerWidget: Widget {
     IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
       PushDeerWidgetEntryView(entry: entry)
     }
-    .configurationDisplayName("My Widget")
-    .description("This is an example widget.")
+    .configurationDisplayName("最近的PushDeer消息")
+    .description("这个小部件可以快捷展示你最近收到的消息.")
   }
 }
 
@@ -171,9 +171,9 @@ struct PushDeerWidget_Previews: PreviewProvider {
 }
 
 let placeholderList = [
-  MessageItem(id: 1, uid: "", text: "第一条消息, 嘿", desp: "", type: "text", pushkey_name: "", created_at: ""),
-  MessageItem(id: 2, uid: "", text: "第二条消息, 哈哈", desp: "", type: "text", pushkey_name: "", created_at: ""),
-  MessageItem(id: 3, uid: "", text: "第三条消息, 我来了", desp: "", type: "text", pushkey_name: "", created_at: ""),
-  MessageItem(id: 4, uid: "", text: "第四条消息, 我很长很长很长很长很长很长很长很长很长很长很长", desp: "", type: "text", pushkey_name: "", created_at: ""),
+  MessageItem(id: 1, uid: "", text: "展示最新通知", desp: "", type: "text", pushkey_name: "", created_at: ""),
+  MessageItem(id: 2, uid: "", text: "方便快速查看", desp: "", type: "text", pushkey_name: "", created_at: ""),
+  MessageItem(id: 3, uid: "", text: "保持消息同步", desp: "", type: "text", pushkey_name: "", created_at: ""),
+  MessageItem(id: 4, uid: "", text: "自动即时刷新", desp: "", type: "text", pushkey_name: "", created_at: ""),
   MessageItem(id: -1, uid: "", text: "+其它\(8)条", desp: "", type: "text", pushkey_name: "", created_at: ""),
 ]
