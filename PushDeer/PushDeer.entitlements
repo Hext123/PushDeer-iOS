@@ -17,7 +17,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.wskfz.pushdeer.ios</string>
+		<string>group.com.pushdeer.app.ios</string>
 	</array>
 	<key>com.apple.security.network.client</key>
 	<true/>

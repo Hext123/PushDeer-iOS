@@ -855,7 +855,7 @@
 				CODE_SIGN_ENTITLEMENTS = PushDeerWidget/PushDeerWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = Y47WTLML2S;
+				DEVELOPMENT_TEAM = HUJ6HAE4VU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PushDeerWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PushDeerWidget;
@@ -867,7 +867,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wskfz.pushdeer.ios.PushDeerWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushdeer.app.ios.PushDeerWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
@@ -917,7 +917,7 @@
 				CODE_SIGN_ENTITLEMENTS = PushDeerWidget/PushDeerWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = Y47WTLML2S;
+				DEVELOPMENT_TEAM = HUJ6HAE4VU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PushDeerWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PushDeerWidget;
@@ -929,7 +929,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wskfz.pushdeer.ios.PushDeerWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushdeer.app.ios.PushDeerWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;

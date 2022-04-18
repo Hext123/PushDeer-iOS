@@ -32,7 +32,7 @@ struct Env {
     #if SELFHOSTED
     return "group.com.pushdeer.self.ios"
     #else
-    return "group.com.wskfz.pushdeer.ios"
+    return "group.com.pushdeer.app.ios"
     #endif
   }()
   
