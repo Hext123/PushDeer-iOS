@@ -85,6 +85,8 @@
 		52B8CF86277E0C12004CB680 /* BaseNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EB90AD2778AFD60048E0ED /* BaseNavigationView.swift */; };
 		52B8CF87277E0C5C004CB680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292F4FC2776BC7A00B9A7BB /* Assets.xcassets */; };
 		52B8FB8727F36F9D00C29D13 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 52B8FB8627F36F9D00C29D13 /* BetterSafariView */; };
+		52C4B434280DC28D009817EA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C4B433280DC28D009817EA /* NotificationService.swift */; };
+		52C4B438280DC28D009817EA /* Notification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52C4B431280DC28D009817EA /* Notification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52E317D9279305BB000B8BB1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52E317D7279305BB000B8BB1 /* InfoPlist.strings */; };
 		52E317DC279305BB000B8BB1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52E317DA279305BB000B8BB1 /* Localizable.strings */; };
 		52E317DF279305BB000B8BB1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52E317DD279305BB000B8BB1 /* InfoPlist.strings */; };
@@ -119,6 +121,13 @@
 			remoteGlobalIDString = 52B8CF63277E0B44004CB680;
 			remoteInfo = PushDeerClip;
 		};
+		52C4B436280DC28D009817EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5292F4ED2776BC7900B9A7BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52C4B430280DC28D009817EA;
+			remoteInfo = Notification;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,6 +138,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				5206009527CF749F00188431 /* PushDeerWidgetExtension.appex in Embed App Extensions */,
+				52C4B438280DC28D009817EA /* Notification.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +203,10 @@
 		52B8CF6F277E0B46004CB680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B8CF70277E0B46004CB680 /* PushDeerClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushDeerClip.entitlements; sourceTree = "<group>"; };
 		52BE373227C236DD004AA630 /* PushDeer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PushDeer-Bridging-Header.h"; sourceTree = "<group>"; };
+		52C4B431280DC28D009817EA /* Notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C4B433280DC28D009817EA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		52C4B435280DC28D009817EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C4B439280DC28D009817EA /* Notification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notification.entitlements; sourceTree = "<group>"; };
 		52E317D8279305BB000B8BB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52E317DB279305BB000B8BB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52E317DE279305BB000B8BB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -254,6 +268,13 @@
 				4812F19BB0BFEFE089BC253E /* Pods_PushDeerClip.framework in Frameworks */,
 				5240023427F371EF00C245CF /* BetterSafariView in Frameworks */,
 				5287FF54278AEA5B00249A0E /* MarkdownUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C4B42E280DC28D009817EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +341,7 @@
 				5292F4F72776BC7900B9A7BB /* PushDeer */,
 				52B8CF65277E0B44004CB680 /* PushDeerClip */,
 				5206008A27CF749E00188431 /* PushDeerWidget */,
+				52C4B432280DC28D009817EA /* Notification */,
 				5292F4F62776BC7900B9A7BB /* Products */,
 				17D35B157765D96FC4DA6C39 /* Pods */,
 				78FEAD2568FB92808C44E85A /* Frameworks */,
@@ -333,6 +355,7 @@
 				5292F4F52776BC7900B9A7BB /* PushDeer.app */,
 				52B8CF64277E0B44004CB680 /* PushDeerClip.app */,
 				5206008527CF749E00188431 /* PushDeerWidgetExtension.appex */,
+				52C4B431280DC28D009817EA /* Notification.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -400,6 +423,16 @@
 				52B8CF6D277E0B46004CB680 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52C4B432280DC28D009817EA /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				52C4B439280DC28D009817EA /* Notification.entitlements */,
+				52C4B433280DC28D009817EA /* NotificationService.swift */,
+				52C4B435280DC28D009817EA /* Info.plist */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		52EB90B12778D9F90048E0ED /* Common */ = {
@@ -485,6 +518,7 @@
 			dependencies = (
 				52B8CF72277E0B46004CB680 /* PBXTargetDependency */,
 				5206009427CF749F00188431 /* PBXTargetDependency */,
+				52C4B437280DC28D009817EA /* PBXTargetDependency */,
 			);
 			name = PushDeer;
 			packageProductDependencies = (
@@ -518,6 +552,23 @@
 			productReference = 52B8CF64277E0B44004CB680 /* PushDeerClip.app */;
 			productType = "com.apple.product-type.application.on-demand-install-capable";
 		};
+		52C4B430280DC28D009817EA /* Notification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52C4B43E280DC28D009817EA /* Build configuration list for PBXNativeTarget "Notification" */;
+			buildPhases = (
+				52C4B42D280DC28D009817EA /* Sources */,
+				52C4B42E280DC28D009817EA /* Frameworks */,
+				52C4B42F280DC28D009817EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Notification;
+			productName = Notification;
+			productReference = 52C4B431280DC28D009817EA /* Notification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -525,7 +576,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					5206008427CF749E00188431 = {
@@ -538,6 +589,9 @@
 					52B8CF63277E0B44004CB680 = {
 						CreatedOnToolsVersion = 13.2.1;
 						LastSwiftMigration = 1320;
+					};
+					52C4B430280DC28D009817EA = {
+						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
 			};
@@ -562,6 +616,7 @@
 				5292F4F42776BC7900B9A7BB /* PushDeer */,
 				52B8CF63277E0B44004CB680 /* PushDeerClip */,
 				5206008427CF749E00188431 /* PushDeerWidgetExtension */,
+				52C4B430280DC28D009817EA /* Notification */,
 			);
 		};
 /* End PBXProject section */
@@ -594,6 +649,13 @@
 				52B8CF6E277E0B46004CB680 /* Preview Assets.xcassets in Resources */,
 				52E317DF279305BB000B8BB1 /* InfoPlist.strings in Resources */,
 				52B8CF87277E0C5C004CB680 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C4B42F280DC28D009817EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,6 +861,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52C4B42D280DC28D009817EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C4B434280DC28D009817EA /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -812,6 +882,11 @@
 			platformFilter = ios;
 			target = 52B8CF63277E0B44004CB680 /* PushDeerClip */;
 			targetProxy = 52B8CF71277E0B46004CB680 /* PBXContainerItemProxy */;
+		};
+		52C4B437280DC28D009817EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52C4B430280DC28D009817EA /* Notification */;
+			targetProxy = 52C4B436280DC28D009817EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1037,6 +1112,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B9D658D778AE868A0E052A8 /* Pods-PushDeer.debug-selfhosted.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-SH";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -1180,6 +1256,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E60A7D4CA1149E1DBC55C672 /* Pods-PushDeer.release-selfhosted.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-SH";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -1381,6 +1458,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE3005BD875FC9819A92466C /* Pods-PushDeer.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -1422,6 +1500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCCE1F6E56B157872E2C755F /* Pods-PushDeer.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -1545,6 +1624,118 @@
 			};
 			name = Release;
 		};
+		52C4B43A280DC28D009817EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Notification/Notification.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = Y47WTLML2S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Notification/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Notification;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wskfz.pushdeer.ios.Notification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52C4B43B280DC28D009817EA /* Debug-SelfHosted */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Notification/Notification.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = HUJ6HAE4VU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Notification/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Notification;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushdeer.self.ios.Notification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug-SelfHosted";
+		};
+		52C4B43C280DC28D009817EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Notification/Notification.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = Y47WTLML2S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Notification/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Notification;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wskfz.pushdeer.ios.Notification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52C4B43D280DC28D009817EA /* Release-SelfHosted */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Notification/Notification.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = HUJ6HAE4VU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Notification/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Notification;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushdeer.self.ios.Notification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release-SelfHosted";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1588,6 +1779,17 @@
 				524E99EA27B3DDF000292396 /* Debug-SelfHosted */,
 				52B8CF76277E0B46004CB680 /* Release */,
 				524E99ED27B3DDFE00292396 /* Release-SelfHosted */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52C4B43E280DC28D009817EA /* Build configuration list for PBXNativeTarget "Notification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C4B43A280DC28D009817EA /* Debug */,
+				52C4B43B280DC28D009817EA /* Debug-SelfHosted */,
+				52C4B43C280DC28D009817EA /* Release */,
+				52C4B43D280DC28D009817EA /* Release-SelfHosted */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
