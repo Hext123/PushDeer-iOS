@@ -8,10 +8,34 @@
 import Foundation
 import Moya
 
+struct TokenAuthorizationPlugin: PluginType {
+  
+  func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+    if
+      let url = request.url,
+      var components = URLComponents(url: url, resolvingAgainstBaseURL: true),
+      let queryItems =  components.queryItems
+    {
+      let queryItems_new = queryItems.map { item -> URLQueryItem in
+        if item.name == "token" {
+          // 把请求参数中的 token 都换成最新的
+          return URLQueryItem(name: "token", value: AppState.shared.token)
+        }
+        return item
+      }
+      components.queryItems = queryItems_new
+      var request_mutable = request
+      request_mutable.url = components.url
+      return request_mutable
+    }
+    return request
+  }
+}
+
 @MainActor
 struct HttpRequest {
   
-  static let provider = MoyaProvider<PushDeerApi>(callbackQueue: DispatchQueue.main)
+  static let provider = MoyaProvider<PushDeerApi>(callbackQueue: DispatchQueue.main, plugins: [TokenAuthorizationPlugin()])
   
   /// 统一处理接口请求, 并且封装成 Swift Concurrency 模式 (async / await)
   static func request<T: Codable>(_ targetType: PushDeerApi, resultType: T.Type) async throws -> T {
