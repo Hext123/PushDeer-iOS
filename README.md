@@ -1,9 +1,14 @@
+# PushDeer
+
+PushDeer 是一个可以自行架设的*无APP*推送服务，同时也为因为某些原因无法使用*无APP*推送方案的同学提供*有APP/自制设备*方案。 
+
+你也可以直接使用官方的服务，作为 **Server酱** 的通道使用，让消息方便快捷的推送到你的手机/电脑上。 
+
+主项目见: https://github.com/easychen/pushdeer 
+
 # PushDeer-iOS
 
-PushDeer 是一个开放源码的无 App 推送服务.
-
 这里是 PushDeer 的 iOS 端的源码, 支持 iOS / iPadOS / macOS.
-
 
 PushDeer-iOS 最低支持 iOS14, 因为苹果轻应用(App Clips)最低支持 iOS14.
 
